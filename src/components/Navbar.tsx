@@ -34,7 +34,7 @@ const Navbar = () => {
         <div className="hidden md:flex text-2xl items-center gap-x-6">
           <ul className="flex gap-x-6 ">
             <li className="px-4 py-2 ">
-              <Link to={"/home"}>Home</Link>
+              <Link to={"/"}>Home</Link>
             </li>
             <li className="px-4 py-2 ">
               <Link to={"/experience"}>Experience</Link>
@@ -54,7 +54,7 @@ const Navbar = () => {
       {isMenuOpen && (
         <ul className="flex-col md:hidden gap-x-6">
           <li className="px-4 py-2 ">
-            <Link to={"/home"}>Home</Link>
+            <Link to={"/"}>Home</Link>
           </li>
           <li className="px-4 py-2 ">
             <Link to={"/projects"}>Projects</Link>
