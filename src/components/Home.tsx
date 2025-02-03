@@ -1,8 +1,9 @@
 import "../App.css";
+import Skills from "./Skills";
 const Home = () => {
   return (
     <>
-      <section className="hero-section bg-gray-600 px-32 py-32">
+      <section className="hero-section bg-gray-600 px-32 py-32 max-sm:px-20 max-sm:py-20 sm:px-20 sm:py-20">
         <div className="hero_container  max-w-7xl  m-auto my-0 items-center">
           <div className="hero_text_container">
             <strong>
@@ -25,7 +26,9 @@ const Home = () => {
           </div>
         </div>
       </section>
-      <section className="skills_container"></section>
+      <section className="skills_container px-32 py-20">
+        <Skills />
+      </section>
     </>
   );
 };

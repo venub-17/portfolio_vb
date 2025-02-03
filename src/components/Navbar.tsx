@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import imgVenu from "../assets/3d_vb.jpg";
 import "../App.css";
 
 const Navbar = () => {
@@ -10,9 +11,18 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="p-4 nav_container">
+    <nav className="p-4 nav_container border-b">
       <div className="flex items-center justify-between">
-        <h1 className=" text-2xl font-bold">Header</h1>
+        <div className="flex justify-center items-center gap-2">
+          <img
+            src={imgVenu}
+            alt="Venu Beenaveni"
+            className="border-2 rounded-full"
+            height={40}
+            width={40}
+          />
+          <h1 className=" text-2xl font-bold">Venu Beenaveni</h1>
+        </div>
         <div className="md:hidden">
           <button onClick={onMenuOpen}>
             <svg
@@ -36,14 +46,17 @@ const Navbar = () => {
             <li className="px-4 py-2 ">
               <Link to={"/"}>Home</Link>
             </li>
-            <li className="px-4 py-2 ">
+            {/* <li className="px-4 py-2 ">
               <Link to={"/experience"}>Experience</Link>
-            </li>
+            </li> */}
             <li className="px-4 py-2 ">
               <Link to={"/projects"}>Projects</Link>
             </li>
             <li className="px-4 py-2 ">
               <Link to={"/contact"}>Contact</Link>
+            </li>
+            <li className="px-4 py-2 ">
+              <Link to={"/admin"}>Admin</Link>
             </li>
           </ul>
           <button className="px-4 py-2 bg-white text-blue-500 rounded-md">
@@ -61,6 +74,9 @@ const Navbar = () => {
           </li>
           <li className="px-4 py-2 ">
             <Link to={"/contact"}>Contact</Link>
+          </li>
+          <li className="px-4 py-2 ">
+            <Link to={"/admin"}>Admin</Link>
           </li>
           <button className="px-4 py-2 bg-white text-blue-500 rounded-md">
             Resume

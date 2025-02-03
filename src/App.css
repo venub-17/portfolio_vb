@@ -2,9 +2,11 @@
 .hero-section,.nav_container{
     background-color: #3b4759;
 }
-h1{
+ul ,h1,label {
     color:#bdc8e7
+
 }
+
 h4{
     color: #858fad
 }

@@ -5,6 +5,9 @@ import Contact from "./components/Contact";
 import Projects from "./components/Projects";
 import Home from "./components/Home";
 import RootLayout from "./components/RootLayout";
+import Projectsentry from "./components/admin/Projectsentry";
+import User from "./components/admin/User";
+import PrivateRoute from "./components/PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -27,6 +30,20 @@ const router = createBrowserRouter([
       {
         path: "contact",
         element: <Contact />,
+      },
+      {
+        path: "admin",
+        element: <PrivateRoute isAuthenticated={false} />,
+        children: [
+          {
+            path: "project-data",
+            element: <Projectsentry />,
+          },
+          {
+            path: "user",
+            element: <User />,
+          },
+        ],
       },
     ],
   },
