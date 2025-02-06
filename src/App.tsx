@@ -8,7 +8,9 @@ import RootLayout from "./components/RootLayout";
 import Projectsentry from "./components/admin/Projectsentry";
 import User from "./components/admin/User";
 import PrivateRoute from "./components/PrivateRoute";
+import Skillsentry from "./components/admin/Skillsentry";
 
+const isAuthenticated = true;
 const router = createBrowserRouter([
   {
     path: "/",
@@ -33,7 +35,7 @@ const router = createBrowserRouter([
       },
       {
         path: "admin",
-        element: <PrivateRoute isAuthenticated={false} />,
+        element: <PrivateRoute isAuthenticated={isAuthenticated} />,
         children: [
           {
             path: "project-data",
@@ -42,6 +44,10 @@ const router = createBrowserRouter([
           {
             path: "user",
             element: <User />,
+          },
+          {
+            path: "skills",
+            element: <Skillsentry />,
           },
         ],
       },

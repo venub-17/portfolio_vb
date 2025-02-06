@@ -17,9 +17,30 @@ const Skills = () => {
       versions: "latest",
     },
     {
-      title: "JavaScript",
-      exp: "5years",
-      versions: "Es6 and latest",
+      title: "React",
+      exp: "1year",
+      versions: "latest",
+    },
+    {
+      title: "React",
+      exp: "1year",
+      versions: "latest",
+    },
+    {
+      title: "React",
+      exp: "1year",
+      versions: "latest",
+    },
+    {
+      title: "React",
+      exp: "1year",
+      versions: "latest",
+    },
+
+    {
+      title: "React",
+      exp: "1year",
+      versions: "latest",
     },
     {
       title: "JavaScript",

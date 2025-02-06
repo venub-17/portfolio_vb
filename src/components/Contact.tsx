@@ -5,10 +5,10 @@ const Contact = () => {
         <div className="contact_info flex justify-center items-center">
           <div>
             <strong className="mb-2">
-              <p className="text-2xl font-medium">Let’s connect!</p>
+              <p className="text-2xl font-medium">Lets connect!</p>
             </strong>
             <h1 className="leading-tight mb-3 break-words text-5xl font-bold max-sm:text-3xl">
-              Reach out and let’s discuss how my front-end skills can bring your
+              Reach out and let discuss how my front-end skills can bring your
               projects to life."
             </h1>
 
