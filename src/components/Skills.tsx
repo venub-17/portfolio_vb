@@ -41,7 +41,10 @@ const Skills = () => {
               <h2 className="text-2xl md:text-3xl">{item.skill_title}</h2>
               <ul className="text-lg md:text-xl text-white">
                 {item.newSkill.map((skill, idx) => (
-                  <li className="inline" key={idx}>
+                  <li
+                    className="inline after:content-[',_'] last:after:content-['']"
+                    key={idx}
+                  >
                     {skill}
                   </li>
                 ))}

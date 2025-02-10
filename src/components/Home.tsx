@@ -1,27 +1,7 @@
-import { useEffect, useState } from "react";
 import "../App.css";
+import About from "./About";
 import Skills from "./Skills";
 const Home = () => {
-  const [role, setRole] = useState("Angular");
-
-  useEffect(() => {
-    const positon = [
-      "Angular",
-      "NodeJs",
-      "React",
-      "Full-Stack",
-      "Fron-End",
-      "UI",
-      "Web",
-    ];
-    const intervalId = setInterval(() => {
-      const pstnIndx = Math.floor(Math.random() * positon.length);
-      setRole(positon[pstnIndx]);
-    }, 2000);
-
-    return () => clearInterval(intervalId);
-  }, []);
-
   return (
     <>
       <section className="hero-section bg-gray-600 px-32 py-32 max-sm:px-20 max-sm:py-20 sm:px-20 sm:py-20">
@@ -48,16 +28,9 @@ const Home = () => {
         </div>
       </section>
       <section className="skills_container px-32 py-20">
-        <section>
-          <h1 className="text-2xl transition-all delay-75">
-            I'm{" "}
-            <strong className="bg-white px-2 py-1 rounded text-black">
-              {" "}
-              {role}
-            </strong>{" "}
-            Developer
-          </h1>
-        </section>
+        <About />
+      </section>
+      <section className="skills_container px-32 py-20">
         <Skills />
       </section>
     </>
