@@ -50,7 +50,11 @@ const Home = () => {
       <section className="skills_container px-32 py-20">
         <section>
           <h1 className="text-2xl transition-all delay-75">
-            I'm <strong className="bg-white text-black"> {role}</strong>{" "}
+            I'm{" "}
+            <strong className="bg-white px-2 py-1 rounded text-black">
+              {" "}
+              {role}
+            </strong>{" "}
             Developer
           </h1>
         </section>
