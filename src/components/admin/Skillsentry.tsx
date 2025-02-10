@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 
 const Skillsentry = () => {
   const skillTitles = [
@@ -33,6 +33,23 @@ const Skillsentry = () => {
     updatedTech[index] = e.target.value; // Update the specific index
     setTech(updatedTech); // Update the state
   };
+  const onSkillSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const formData = new FormData(e.currentTarget);
+    const formValue = Object.fromEntries(formData);
+
+    const skillsArray: string[] = [];
+
+    // Collect all skill inputs (they now have unique names like "skill-0", "skill-1", etc.)
+    tech.forEach((_, idx) => {
+      const skillValue = formData.get(`skill-${idx}`) as string;
+      if (skillValue) {
+        skillsArray.push(skillValue);
+      }
+    });
+
+    console.log(formValue, "value", skillsArray);
+  };
 
   return (
     <>
@@ -55,11 +72,14 @@ const Skillsentry = () => {
       </div>
 
       <div className="bg-[#4f596a] rounded text-black px-20 py-10">
-        <form>
+        <form onSubmit={onSkillSubmit}>
           <h1 className="text-2xl mb-4">Please add Skill here...</h1>
 
           <div className="flex justify-end">
-            <button className="rounded px-8 py-4 text-[#000000] bg-[#75BBF5]">
+            <button
+              type="submit"
+              className="rounded px-8 py-4 text-[#000000] bg-[#75BBF5]"
+            >
               Add Skill
             </button>
           </div>
@@ -67,8 +87,11 @@ const Skillsentry = () => {
           <div className="flex flex-row gap-10 justify-evenly">
             <div className="flex w-full flex-col gap-2 mb-4">
               <label htmlFor="">Title</label>
-              <select className="border-2 border-gray-400 outline-none rounded py-4 px-4">
-                <option value="">Select Title</option>
+              <select
+                name="title"
+                className="border-2 border-gray-400 outline-none rounded py-4 px-4"
+              >
+                <option value="dummy">Select Title</option>
                 {skillTitles.map((option) => (
                   <option key={option.id} value={option.id}>
                     {option.name}
@@ -85,6 +108,7 @@ const Skillsentry = () => {
                   <input
                     className="border-2 w-11/12 border-gray-400 outline-none rounded py-4 px-4"
                     type="text"
+                    name={`skill-${idx}`}
                     value={itm} // Ensure value is correctly bound to state
                     onChange={(e) => handleTechChange(e, idx)} // Correctly update state for the correct input
                   />
