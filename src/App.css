@@ -19,3 +19,9 @@ small{
 em{
     color: #367375;
 }
+li:after {
+    content: ", ";
+}
+li:last-child:after {
+    content: "";
+}

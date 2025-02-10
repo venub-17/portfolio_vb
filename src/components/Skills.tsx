@@ -1,14 +1,14 @@
 import { useEffect, useState } from "react";
-
+import "../App.css";
 interface Skill {
   skill_title: string;
-  newSkill: string;
+  newSkill: string[];
 }
-
 const Skills = () => {
+  const apiURL = "http://localhost:3000";
   const [skills, setSkills] = useState<Skill[]>([]);
   useEffect(() => {
-    fetch("http://localhost:3000/skills", {
+    fetch(`${apiURL}/skills`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -40,7 +40,11 @@ const Skills = () => {
             >
               <h2 className="text-2xl md:text-3xl">{item.skill_title}</h2>
               <ul className="text-lg md:text-xl text-white">
-                <li className="p-2">{item.newSkill}</li>
+                {item.newSkill.map((skill, idx) => (
+                  <li className="inline" key={idx}>
+                    {skill}
+                  </li>
+                ))}
               </ul>
             </div>
           ))}
