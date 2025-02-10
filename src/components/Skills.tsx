@@ -5,7 +5,7 @@ interface Skill {
   newSkill: string[];
 }
 const Skills = () => {
-  const apiURL = "http://localhost:3000";
+  const apiURL = "https://portfolio-vb-api.onrender.com";
   const [skills, setSkills] = useState<Skill[]>([]);
   useEffect(() => {
     fetch(`${apiURL}/skills`, {
