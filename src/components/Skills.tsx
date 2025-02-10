@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+
 interface Skill {
   title: string;
   exp: string;
@@ -48,7 +50,21 @@ const Skills = () => {
       versions: "Es6 and latest",
     },
   ];
-
+  useEffect(() => {
+    fetch("https://portfolio-vb-api.onrender.com/skills")
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error("Network response was not ok");
+        }
+        return res.json();
+      })
+      .then((data) => {
+        console.log(data, "data");
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  });
   return (
     <>
       <div className="overflow-hidden p-4">
