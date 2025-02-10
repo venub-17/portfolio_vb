@@ -51,7 +51,14 @@ const Skills = () => {
     },
   ];
   useEffect(() => {
-    fetch("https://portfolio-vb-api.onrender.com/skills")
+    fetch("https://portfolio-vb-api.onrender.com/skills", {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      credentials: "include", // Ensure the Origin header is sent
+    })
       .then((res) => {
         if (!res.ok) {
           throw new Error("Network response was not ok");
@@ -64,7 +71,7 @@ const Skills = () => {
       .catch((error) => {
         console.log(error);
       });
-  });
+  }, []);
   return (
     <>
       <div className="overflow-hidden p-4">
