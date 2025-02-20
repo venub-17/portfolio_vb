@@ -17,13 +17,17 @@ const Skills = () => {
       credentials: "include", // Ensure the Origin header is sent
     })
       .then((res) => {
+        console.log(res, "res");
         if (!res.ok) {
           throw new Error("Network response was not ok");
         }
         return res.json();
       })
       .then((data) => {
+        console.log(data, "data");
+
         setSkills(data.skills);
+        console.log(skills, "skills");
       })
       .catch((error) => {
         console.log(error);
