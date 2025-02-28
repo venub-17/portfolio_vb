@@ -1,57 +1,58 @@
+import { roles } from "../shared/project";
+
 interface Project {
-  org_name: string;
+  client: string;
   role: string;
-  from_date: Date;
-  to_date: Date;
+  duration: string;
   description: string;
-  responsibilities: string;
+  responsibilities: string[];
+  tools: string[];
+  company: string;
 }
+interface GroupedRoles {
+  [company: string]: Project[];
+}
+
 const Projects = () => {
-  const projects: Project[] = [
-    {
-      org_name: "Birlasoft",
-      role: "Senior Consaultant",
-      from_date: new Date(6 / 9 / 2021),
-      to_date: new Date(27 / 12 / 2024),
-      description: "Worked here",
-      responsibilities: "my responsibilities",
-    },
-  ];
+  const groupedRoles: GroupedRoles = roles.reduce((acc, role) => {
+    if (!acc[role.company]) {
+      acc[role.company] = [];
+    }
+    acc[role.company].push(role);
+    return acc;
+  }, {} as GroupedRoles);
+
   return (
-    <div>
-      {projects.map((item, idx) => {
-        return (
-          <div key={idx}>
-            <section className="hero-section bg-gray-600 px-32 py-32 max-sm:px-20 max-sm:py-20 sm:px-20 sm:py-20">
-              <h1>{item.org_name}</h1>
-              <h2>{item.role}</h2>
-              <h4>
-                {item.from_date.toString()} - {item.to_date.toString()}
-              </h4>
-              <p>{item.description}</p>
-              <p>{item.responsibilities}</p>
-            </section>
-            <div className="sketchfab-embed-wrapper">
-              {" "}
-              <iframe
-                title="MacBook Pro 2016 (15-inch)"
-                frameBorder="0"
-                allowFullScreen
-                // mozallowfullscreen="true"
-                // webkitallowfullscreen="true"
-                allow="autoplay; fullscreen; xr-spatial-tracking"
-                xr-spatial-tracking
-                execution-while-out-of-viewport
-                execution-while-not-rendered
-                web-share
-                src="https://sketchfab.com/models/49a187bd58c445bda003c495f8884a47/embed"
-              >
-                {" "}
-              </iframe>{" "}
+    <div className="px-32 py-32 max-sm:px-20 max-sm:py-20 sm:px-20 sm:py-20">
+      {Object.keys(groupedRoles).map((company, index) => (
+        <div key={index}>
+          <h2 className="text-5xl">{company}</h2>
+          {groupedRoles[company].map((role, roleIndex) => (
+            <div key={roleIndex} className="role py-8">
+              <h3 className="text-3xl">Client: {role.client}</h3>{" "}
+              <div className="flex gap-10 items-center text-2xl">
+                <p>
+                  <strong>{role.role}</strong>
+                </p>
+                <p>
+                  <strong> {role.duration}</strong>
+                </p>
+              </div>
+              <p className="text-2xl">{role.description}</p>
+              <ul className="list-disc px-8 ">
+                {role.responsibilities.map((task, i) => (
+                  <li className="p-2 text-xl" key={i}>
+                    {task}
+                  </li>
+                ))}
+              </ul>
+              <p>
+                <strong>Tools:</strong> {role.tools.join(", ")}
+              </p>{" "}
             </div>
-          </div>
-        );
-      })}
+          ))}
+        </div>
+      ))}
     </div>
   );
 };
