@@ -1,5 +1,4 @@
 import { Link, Outlet } from "react-router-dom";
-import { FaCode } from "react-icons/fa6";
 const AdminRoot = () => {
   return (
     <>
