@@ -31,6 +31,24 @@ const Projects = () => {
               <p>{item.description}</p>
               <p>{item.responsibilities}</p>
             </section>
+            <div className="sketchfab-embed-wrapper">
+              {" "}
+              <iframe
+                title="MacBook Pro 2016 (15-inch)"
+                frameBorder="0"
+                allowFullScreen
+                // mozallowfullscreen="true"
+                // webkitallowfullscreen="true"
+                allow="autoplay; fullscreen; xr-spatial-tracking"
+                xr-spatial-tracking
+                execution-while-out-of-viewport
+                execution-while-not-rendered
+                web-share
+                src="https://sketchfab.com/models/49a187bd58c445bda003c495f8884a47/embed"
+              >
+                {" "}
+              </iframe>{" "}
+            </div>
           </div>
         );
       })}

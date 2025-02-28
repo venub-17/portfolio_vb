@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import "../App.css";
 interface Skill {
   skill_title: string;
@@ -7,7 +7,11 @@ interface Skill {
 const Skills = () => {
   const apiURL = "https://portfolio-vb-api.onrender.com";
   const [skills, setSkills] = useState<Skill[]>([]);
+  const hasFetched = useRef(false); // Track if fetch has run
+
   useEffect(() => {
+    // if (hasFetched.current) return; // Prevent duplicate call
+    hasFetched.current = true;
     fetch(`${apiURL}/skills`, {
       method: "GET",
       headers: {
