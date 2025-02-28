@@ -10,7 +10,7 @@ import User from "./components/admin/User";
 import PrivateRoute from "./components/PrivateRoute";
 import Skillsentry from "./components/admin/Skillsentry";
 
-const isAuthenticated = false;
+const isAuthenticated = true;
 const router = createBrowserRouter([
   {
     path: "/",

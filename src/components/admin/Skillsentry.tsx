@@ -84,7 +84,7 @@ const Skillsentry = () => {
             </button>
           </div>
 
-          <div className="flex flex-row gap-10 justify-evenly">
+          <div className="flex flex-row flwr gap-10 justify-evenly">
             <div className="flex w-full flex-col gap-2 mb-4">
               <label htmlFor="">Title</label>
               <select

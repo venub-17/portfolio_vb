@@ -41,7 +41,7 @@ const Navbar = () => {
             </svg>
           </button>
         </div>
-        <div className="hidden md:flex text-2xl items-center gap-x-6">
+        <div className="hidden  md:flex text-2xl items-center gap-x-6">
           <ul className="flex gap-x-6 ">
             <li className="px-4 py-2 ">
               <Link to={"/"}>Home</Link>
