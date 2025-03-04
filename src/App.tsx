@@ -9,6 +9,8 @@ import Projectsentry from "./components/admin/Projectsentry";
 import User from "./components/admin/User";
 import PrivateRoute from "./components/PrivateRoute";
 import Skillsentry from "./components/admin/Skillsentry";
+import Login from "./components/auth/Login";
+import Signup from "./components/auth/Signup";
 
 const isAuthenticated = true;
 const router = createBrowserRouter([
@@ -50,6 +52,14 @@ const router = createBrowserRouter([
             element: <Skillsentry />,
           },
         ],
+      },
+      {
+        path: "login",
+        element: <Login />,
+      },
+      {
+        path: "signup",
+        element: <Signup />,
       },
     ],
   },

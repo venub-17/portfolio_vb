@@ -56,10 +56,10 @@ const Navbar = () => {
               <Link to={"/contact"}>Contact</Link>
             </li>
             <li className="px-4 py-2 ">
-              <Link to={"/admin"}>Admin</Link>
+              <Link to={"/login"}>Login</Link>
             </li>
           </ul>
-          <button className="px-4 py-2 bg-white text-blue-500 rounded-md">
+          <button className="px-4 py-2 bg-[#FFFFFF] text-[#374253] rounded-md">
             Resume
           </button>
         </div>
@@ -76,9 +76,9 @@ const Navbar = () => {
             <Link to={"/contact"}>Contact</Link>
           </li>
           <li className="px-4 py-2 ">
-            <Link to={"/admin"}>Admin</Link>
+            <Link to={"/login"}>Login</Link>
           </li>
-          <button className="px-4 py-2 bg-white text-blue-500 rounded-md">
+          <button className="px-4 py-2 bg-[#FFFFFF] text-[#3b4759] rounded-md">
             Resume
           </button>
         </ul>
