@@ -1,37 +1,24 @@
 import { useEffect, useRef, useState } from "react";
 import "../App.css";
+import api from "../shared/axiosInstance";
 interface Skill {
   skill_title: string;
   newSkill: string[];
 }
 const Skills = () => {
-  const apiURL = "https://portfolio-vb-api.onrender.com";
+  // const apiURL = "https://portfolio-vb-api.onrender.com";
   const [skills, setSkills] = useState<Skill[]>([]);
   const hasFetched = useRef(false); // Track if fetch has run
 
   useEffect(() => {
     // if (hasFetched.current) return; // Prevent duplicate call
     hasFetched.current = true;
-    fetch(`${apiURL}/skills`, {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-      },
-      credentials: "include", // Ensure the Origin header is sent
-    })
-      .then((res) => {
-        console.log(res, "res");
-        if (!res.ok) {
-          throw new Error("Network response was not ok");
-        }
-        return res.json();
-      })
+    api
+      .get("/skills")
       .then((data) => {
-        console.log(data, "data");
-
-        setSkills(data.skills);
-        console.log(skills, "skills");
+        console.log(data.data.skills, "data");
+        setSkills(data.data.skills);
+        // console.log(skills, "skills");
       })
       .catch((error) => {
         console.log(error);
