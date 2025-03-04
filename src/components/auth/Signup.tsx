@@ -1,18 +1,30 @@
-import axios from "axios";
 import React from "react";
 import { NavLink } from "react-router-dom";
-const Signup = () => {
-  const apiURL = import.meta.env.VITE_API_URL;
+import api from "../../shared/axiosInstance";
 
+const Signup = () => {
   const onSignuphandler = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     console.log();
     const formData = new FormData(e.currentTarget);
     const formValue = Object.fromEntries(formData);
-    console.log(formValue, "signup values", apiURL);
-    axios.post(`${apiURL}/auth/signup`, formValue).then((res) => {
-      console.log(res);
-    });
+    // console.log(formValue, "signup values", apiURL);
+    const payload = {
+      userName: `${formValue.firstName} ${formValue.lastName}`,
+      email: formValue.email,
+      password: formValue.password,
+      confirmPassword: formValue.confirmPassword,
+    };
+    try {
+      const response = api.post("/auth/signup", payload);
+      return response;
+    } catch (error) {
+      console.log(error);
+      throw error;
+    }
+    // axios.post(`${apiURL}/auth/signup`, payload).then((res) => {
+    //   console.log(res);
+    // });
   };
   return (
     <>
