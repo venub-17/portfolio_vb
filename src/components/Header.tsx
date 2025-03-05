@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
 import Navbar from "./Navbar";
+import { useLocation } from "react-router-dom";
 
 const Header = () => {
   const [isLoginStatus, setIsLoginStatus] = useState(false);
   const [isAdminStatus, setIsAdminStatus] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const isLogin1 = localStorage.getItem("isLogin");
@@ -11,7 +13,7 @@ const Header = () => {
     console.log(isAdmin, isLogin1, "logadmi");
     setIsLoginStatus(isLogin1 === "true");
     setIsAdminStatus(isAdmin === "true");
-  }, []);
+  }, [location]);
 
   const onLogout = () => {
     localStorage.removeItem("authToken");
