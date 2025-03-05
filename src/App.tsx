@@ -12,7 +12,8 @@ import Skillsentry from "./components/admin/Skillsentry";
 import Login from "./components/auth/Login";
 import Signup from "./components/auth/Signup";
 
-const isAuthenticated = Boolean(localStorage.getItem("isAdmin"));
+const isAuthenticated = localStorage.getItem("isAdmin") ? true : false;
+
 const router = createBrowserRouter([
   {
     path: "/",
