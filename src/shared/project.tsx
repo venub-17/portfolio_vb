@@ -2,6 +2,41 @@
 
 export const roles = [
   {
+    company: "S9 Technologies inc.",
+    client: "Ceva Logistics",
+    role: "Senior Frontend Developer",
+    duration: "January 2025 to Till Date",
+    description:
+      "The project aims to enhance real-time freight management, improve communication across global data centers, and ensure accurate and timely updates on shipments.",
+    responsibilities: [
+      "Developed applications using modern front-end technologies, including Angular 15, TypeScript, JavaScript (ES6+), CSS3, and HTML5.",
+      "Built dynamic and interactive web pages using HTML5, CSS3, and JavaScript (ES6+), implementing best UI/UX practices.",
+      "Utilized Agile methodologies and worked with Jira to track tasks, bugs, and feature implementations effectively.",
+      "Planned and developed user stories assigned by the client, ensuring successful sprint completion and delivering demos at the end of each sprint cycle.",
+      "Implemented business logic using Angular components, services, models, RxJS, and dependency injection, following OOP principles and modular development practices.",
+      "Collaborated with back-end developers to ensure smooth API integration, ensuring front-end interfaces interact effectively with microservices architecture and databases.",
+      "Optimized application performance by implementing lazy loading, change detection strategies (OnPush), and efficient API handling using RxJS.",
+      "Implemented unit and integration tests using Jasmine and Karma for Angular components, and JUnit and Mockito for backend logic.",
+      "Collaborated with designers to ensure the UI design aligns with the user-centric approach and overall business requirements.",
+      "Built responsive layouts using modern CSS frameworks (e.g., Flexbox, CSS Grid) to ensure optimal user experiences across all screen sizes.",
+      "Implemented error handling and displayed user-friendly messages to ensure smooth interactions with the APIs.",
+    ],
+    tools: [
+      "Angular",
+      "React",
+      "JavaScript",
+      "TypeScript",
+      "HTML5",
+      "CSS3",
+      "JSON",
+      "MongoDB",
+      "Bootstrap",
+
+      "Material UI",
+      "Tailwind CSS",
+    ],
+  },
+  {
     company: "Birlasoft",
     client: "BNY Mellon Corporation",
     role: "Senior Front End Developer",

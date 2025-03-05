@@ -25,20 +25,23 @@ const Projects = () => {
   return (
     <div className="px-32 py-32 max-sm:px-20 max-sm:py-20 sm:px-20 sm:py-20">
       {Object.keys(groupedRoles).map((company, index) => (
-        <div key={index}>
-          <h2 className="text-5xl">{company}</h2>
+        <div key={index} className="w-3/4 my-0 mx-auto">
+          <h2 className="text-5xl mb-4">{company}</h2>
           {groupedRoles[company].map((role, roleIndex) => (
-            <div key={roleIndex} className="role py-8">
-              <h3 className="text-3xl">Client: {role.client}</h3>{" "}
-              <div className="flex gap-10 items-center text-2xl">
-                <p>
+            <div
+              key={roleIndex}
+              className="role py-8 rounded-lg mb-8 text-white w-full shadow-lg bg-[#4f596a] p-4"
+            >
+              <h3 className="text-3xl leading-normal">{role.client}</h3>{" "}
+              <div className="flex  gap-10 items-center text-2xl py-4">
+                <p className="text-[#e6e6e6]">
                   <strong>{role.role}</strong>
                 </p>
-                <p>
-                  <strong> {role.duration}</strong>
+                <p className="text-[#e6e6e6]">
+                  <strong> ({role.duration})</strong>
                 </p>
               </div>
-              <p className="text-2xl">{role.description}</p>
+              <p className="text-2xl text-[#e6e6e6] py-4">{role.description}</p>
               <ul className="list-disc px-8 ">
                 {role.responsibilities.map((task, i) => (
                   <li className="p-2 text-xl" key={i}>
@@ -46,7 +49,7 @@ const Projects = () => {
                   </li>
                 ))}
               </ul>
-              <p>
+              <p className="py-6">
                 <strong>Tools:</strong> {role.tools.join(", ")}
               </p>{" "}
             </div>

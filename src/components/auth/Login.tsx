@@ -1,13 +1,38 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
+import api from "../../shared/axiosInstance";
+import { useModal } from "../../shared/modal/ModalContext";
+import { AxiosError } from "axios";
 
 const Login = () => {
-  const onLogin = (e: React.FormEvent<HTMLFormElement>) => {
+  const navigate = useNavigate();
+  const { openModal } = useModal();
+
+  const onLogin = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     const formData = new FormData(e.currentTarget);
     const formValue = Object.fromEntries(formData);
 
-    console.log(formValue, "login");
+    try {
+      const response = await api.post("/auth/login", formValue);
+      if (response.status === 200) {
+        const token = response.data.token;
+        const isAdmin = response.data.isAdmin;
+        const isLogin = "true";
+        localStorage.setItem("authToken", token);
+        localStorage.setItem("isAdmin", isAdmin);
+        localStorage.setItem("isLogin", isLogin);
+        navigate("/home");
+      }
+    } catch (error) {
+      if (error instanceof AxiosError) {
+        openModal(error.response?.data?.message || error.message);
+      } else if (error instanceof Error) {
+        openModal(error.message);
+      } else {
+        openModal("An unexpected error occurred.");
+      }
+    }
   };
   return (
     <>

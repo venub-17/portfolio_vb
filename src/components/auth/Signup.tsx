@@ -1,14 +1,14 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import api from "../../shared/axiosInstance";
+import { useModal } from "../../shared/modal/ModalContext";
 
 const Signup = () => {
+  const { openModal } = useModal();
   const onSignuphandler = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log();
     const formData = new FormData(e.currentTarget);
     const formValue = Object.fromEntries(formData);
-    // console.log(formValue, "signup values", apiURL);
     const payload = {
       userName: `${formValue.firstName} ${formValue.lastName}`,
       email: formValue.email,
@@ -19,12 +19,8 @@ const Signup = () => {
       const response = api.post("/auth/signup", payload);
       return response;
     } catch (error) {
-      console.log(error);
-      throw error;
+      openModal((error as Error).message);
     }
-    // axios.post(`${apiURL}/auth/signup`, payload).then((res) => {
-    //   console.log(res);
-    // });
   };
   return (
     <>

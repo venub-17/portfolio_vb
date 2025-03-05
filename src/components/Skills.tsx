@@ -1,27 +1,23 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import "../App.css";
 import api from "../shared/axiosInstance";
+import { useModal } from "../shared/modal/ModalContext";
 interface Skill {
   skill_title: string;
   newSkill: string[];
 }
 const Skills = () => {
-  // const apiURL = "https://portfolio-vb-api.onrender.com";
   const [skills, setSkills] = useState<Skill[]>([]);
-  const hasFetched = useRef(false); // Track if fetch has run
+  const { openModal } = useModal();
 
   useEffect(() => {
-    // if (hasFetched.current) return; // Prevent duplicate call
-    hasFetched.current = true;
     api
       .get("/skills")
       .then((data) => {
-        console.log(data.data.skills, "data");
         setSkills(data.data.skills);
-        // console.log(skills, "skills");
       })
       .catch((error) => {
-        console.log(error);
+        openModal((error as Error).message);
       });
   }, []);
   return (

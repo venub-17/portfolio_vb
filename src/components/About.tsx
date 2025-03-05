@@ -27,18 +27,18 @@ const About = () => {
           setDisplayedText("");
           setLetterIndex(0);
           setWordIndex((prev) => (prev + 1) % positions.length);
-        }, 1000); // Wait 1 second before switching to the next word
+        }, 500); // Wait 1 second before switching to the next word
       }
-    }, 300); // Adjust speed for each letter
+    }, 100); // Adjust speed for each letter
 
     return () => clearInterval(interval);
   }, [letterIndex, wordIndex]);
   return (
     <>
       <small className="mb-4 inline-block">Want to know more about me?</small>
-      <h1 className="text-4xl transition-opacity duration-500 ease-in-out opacity-100 delay-75">
+      <h1 className="text-xl xs:text-2xl sm-425:text-4xl transition-opacity duration-500 ease-in-out  opacity-100 delay-75">
         I'm a{" "}
-        <strong className=" px-2 py-1 rounded text-[#fff]">
+        <strong className="px-2 py-1 rounded  text-[#fff]">
           {displayedText}
         </strong>
       </h1>

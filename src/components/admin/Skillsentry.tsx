@@ -39,7 +39,7 @@ const Skillsentry = () => {
     const formValue = Object.fromEntries(formData);
 
     const skillsArray: string[] = [];
-
+    console.log(formValue);
     // Collect all skill inputs (they now have unique names like "skill-0", "skill-1", etc.)
     tech.forEach((_, idx) => {
       const skillValue = formData.get(`skill-${idx}`) as string;
@@ -47,8 +47,6 @@ const Skillsentry = () => {
         skillsArray.push(skillValue);
       }
     });
-
-    console.log(formValue, "value", skillsArray);
   };
 
   return (

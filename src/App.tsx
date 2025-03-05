@@ -12,7 +12,7 @@ import Skillsentry from "./components/admin/Skillsentry";
 import Login from "./components/auth/Login";
 import Signup from "./components/auth/Signup";
 
-const isAuthenticated = true;
+const isAuthenticated = Boolean(localStorage.getItem("isAdmin"));
 const router = createBrowserRouter([
   {
     path: "/",
@@ -20,6 +20,10 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
+        element: <Home />,
+      },
+      {
+        path: "home",
         element: <Home />,
       },
       {

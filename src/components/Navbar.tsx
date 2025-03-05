@@ -2,8 +2,13 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import imgVenu from "../assets/3d_vb.jpg";
 import "../App.css";
+interface NavbarProps {
+  isLoginStatus: boolean;
+  isAdminStatus: boolean;
+  onLogout: () => void;
+}
 
-const Navbar = () => {
+const Navbar = ({ isLoginStatus, isAdminStatus, onLogout }: NavbarProps) => {
   const [isMenuOpen, setMenuOpen] = useState(false);
 
   const onMenuOpen = () => {
@@ -52,12 +57,23 @@ const Navbar = () => {
             <li className="px-4 py-2 ">
               <Link to={"/projects"}>Projects</Link>
             </li>
+            {isLoginStatus && (
+              <li className="px-4 py-2 ">
+                <Link to={"/contact"}>Contact</Link>
+              </li>
+            )}
             <li className="px-4 py-2 ">
-              <Link to={"/contact"}>Contact</Link>
+              {!isLoginStatus && <Link to={"/login"}>Login</Link>}
             </li>
             <li className="px-4 py-2 ">
-              <Link to={"/login"}>Login</Link>
+              {isLoginStatus && <button onClick={onLogout}>Logout</button>}
             </li>
+
+            {isAdminStatus && (
+              <li className="px-4 py-2 ">
+                <Link to={"/admin"}>Admin</Link>
+              </li>
+            )}
           </ul>
           <button className="px-4 py-2 bg-[#FFFFFF] text-[#374253] rounded-md">
             Resume
@@ -72,12 +88,23 @@ const Navbar = () => {
           <li className="px-4 py-2 ">
             <Link to={"/projects"}>Projects</Link>
           </li>
+          {isLoginStatus && (
+            <li className="px-4 py-2 ">
+              <Link to={"/contact"}>Contact</Link>
+            </li>
+          )}
           <li className="px-4 py-2 ">
-            <Link to={"/contact"}>Contact</Link>
+            {isLoginStatus ? (
+              <Link to={"/login"}>Login</Link>
+            ) : (
+              <button onClick={onLogout}>Logout</button>
+            )}
           </li>
-          <li className="px-4 py-2 ">
-            <Link to={"/login"}>Login</Link>
-          </li>
+          {isAdminStatus && (
+            <li className="px-4 py-2 ">
+              <Link to={"/admin"}>Admin</Link>
+            </li>
+          )}
           <button className="px-4 py-2 bg-[#FFFFFF] text-[#3b4759] rounded-md">
             Resume
           </button>
