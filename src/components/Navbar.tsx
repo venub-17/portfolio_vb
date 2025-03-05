@@ -62,18 +62,19 @@ const Navbar = ({ isLoginStatus, isAdminStatus, onLogout }: NavbarProps) => {
                 <Link to={"/contact"}>Contact</Link>
               </li>
             )}
-            <li className="px-4 py-2 ">
-              {!isLoginStatus && <Link to={"/login"}>Login</Link>}
-            </li>
-            <li className="px-4 py-2 ">
-              {isLoginStatus && <button onClick={onLogout}>Logout</button>}
-            </li>
 
             {isAdminStatus && (
               <li className="px-4 py-2 ">
                 <Link to={"/admin"}>Admin</Link>
               </li>
             )}
+            <li className="px-4 py-2 ">
+              {!isLoginStatus ? (
+                <Link to={"/login"}>Login</Link>
+              ) : (
+                <button onClick={onLogout}>Logout</button>
+              )}
+            </li>
           </ul>
           <button className="px-4 py-2 bg-[#FFFFFF] text-[#374253] rounded-md">
             Resume
@@ -93,18 +94,19 @@ const Navbar = ({ isLoginStatus, isAdminStatus, onLogout }: NavbarProps) => {
               <Link to={"/contact"}>Contact</Link>
             </li>
           )}
-          <li className="px-4 py-2 ">
-            {isLoginStatus ? (
-              <Link to={"/login"}>Login</Link>
-            ) : (
-              <button onClick={onLogout}>Logout</button>
-            )}
-          </li>
+
           {isAdminStatus && (
             <li className="px-4 py-2 ">
               <Link to={"/admin"}>Admin</Link>
             </li>
           )}
+          <li className="px-4 py-2 ">
+            {!isLoginStatus ? (
+              <Link to={"/login"}>Login</Link>
+            ) : (
+              <button onClick={onLogout}>Logout</button>
+            )}
+          </li>
           <button className="px-4 py-2 bg-[#FFFFFF] text-[#3b4759] rounded-md">
             Resume
           </button>
