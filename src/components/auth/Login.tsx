@@ -3,7 +3,10 @@ import api from "../../shared/axiosInstance";
 import { useModal } from "../../shared/modal/ModalContext";
 import { AxiosError } from "axios";
 
-const Login = () => {
+interface LoginProps {
+  onLoginSuccess: (isAdmin: boolean) => void;
+}
+const Login = ({ onLoginSuccess }: LoginProps) => {
   const navigate = useNavigate();
   const { openModal } = useModal();
 
@@ -22,6 +25,7 @@ const Login = () => {
         localStorage.setItem("authToken", token);
         localStorage.setItem("isAdmin", isAdmin);
         localStorage.setItem("isLogin", isLogin);
+        onLoginSuccess(isAdmin);
         navigate("/home");
       }
     } catch (error) {
