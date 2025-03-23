@@ -1,12 +1,12 @@
-import { useState } from "react";
+import { ChangeEvent, useState } from "react";
 import { useModal } from "../../shared/modal/ModalContext";
 
 const UploadResume = () => {
-  const [selectedFile, setSelectedFile] = useState(null);
+  const [selectedFile, setSelectedFile] = useState<File | null>(null);
   const { openModal } = useModal();
 
-  const onSelectFile = (event) => {
-    const file = event.target.files[0];
+  const onSelectFile = (event: ChangeEvent<HTMLInputElement>) => {
+    const file = event.target.files?.[0];
 
     if (file && file.type === "application/pdf") {
       setSelectedFile(file);
