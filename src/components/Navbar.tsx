@@ -2,6 +2,8 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import imgVenu from "../assets/3d_vb.jpg";
 import "../App.css";
+import api from "../shared/axiosInstance";
+
 interface NavbarProps {
   isLoginStatus: boolean;
   isAdminStatus: boolean;
@@ -13,6 +15,31 @@ const Navbar = ({ isLoginStatus, isAdminStatus, onLogout }: NavbarProps) => {
 
   const onMenuOpen = () => {
     setMenuOpen(!isMenuOpen);
+  };
+  const onDownloadresume = async () => {
+    console.log("download");
+    try {
+      const response = await api.get("/resume/download", {
+        responseType: "blob", // Important for handling binary data
+      });
+
+      // Create a temporary URL for the blob
+      const url = window.URL.createObjectURL(response.data);
+
+      // Create a link element and trigger the download
+      const link = document.createElement("a");
+      link.href = url;
+      link.setAttribute("download", "VenuBeenaveni.pdf"); // Set the filename
+      document.body.appendChild(link);
+      link.click();
+
+      // Clean up
+      document.body.removeChild(link);
+      window.URL.revokeObjectURL(url);
+    } catch (error) {
+      console.error("Error downloading file:", error);
+      alert("Failed to download file");
+    }
   };
 
   return (
@@ -76,7 +103,10 @@ const Navbar = ({ isLoginStatus, isAdminStatus, onLogout }: NavbarProps) => {
               <button onClick={onLogout}>Logout</button>
             )}
           </ul>
-          <button className="px-4 py-2 bg-[#FFFFFF] text-[#374253] rounded-md">
+          <button
+            onClick={onDownloadresume}
+            className="px-4 py-2 bg-[#FFFFFF] text-[#374253] rounded-md"
+          >
             Resume
           </button>
         </div>

@@ -16,6 +16,9 @@ const AdminRoot = () => {
             <li>
               <Link to={"skills"}>New Skill</Link>
             </li>
+            <li>
+              <Link to={"upload-resume"}>Upload Resume</Link>
+            </li>
           </ul>
         </aside>
 

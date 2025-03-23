@@ -9,16 +9,16 @@ const Header = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const isLogin1 = localStorage.getItem("isLogin");
-    const isAdmin = localStorage.getItem("isAdmin");
+    const isLogin1 = sessionStorage.getItem("isLogin");
+    const isAdmin = sessionStorage.getItem("isAdmin");
     setIsLoginStatus(isLogin1 === "true");
     setIsAdminStatus(isAdmin === "true");
   }, [location]);
 
   const onLogout = () => {
-    localStorage.removeItem("authToken");
-    localStorage.removeItem("isAdmin");
-    localStorage.removeItem("isLogin");
+    sessionStorage.removeItem("authToken");
+    sessionStorage.removeItem("isAdmin");
+    sessionStorage.removeItem("isLogin");
     setIsAdminStatus(false);
     setIsLoginStatus(false);
     navigate("/home");

@@ -12,14 +12,15 @@ import Skillsentry from "./components/admin/Skillsentry";
 import Login from "./components/auth/Login";
 import Signup from "./components/auth/Signup";
 import { useState } from "react";
+import UploadResume from "./components/admin/UploadResume";
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(
-    localStorage.getItem("isAdmin") ? true : false
+    sessionStorage.getItem("isAdmin") ? true : false
   );
 
   const handleLogin = (isAdmin: boolean) => {
-    localStorage.setItem("isAdmin", String(isAdmin));
+    sessionStorage.setItem("isAdmin", String(isAdmin));
     setIsAuthenticated(true);
   };
   const router = createBrowserRouter([
@@ -63,6 +64,10 @@ function App() {
             {
               path: "skills",
               element: <Skillsentry />,
+            },
+            {
+              path: "upload-resume",
+              element: <UploadResume />,
             },
           ],
         },

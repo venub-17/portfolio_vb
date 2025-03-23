@@ -22,9 +22,9 @@ const Login = ({ onLoginSuccess }: LoginProps) => {
         const token = response.data.token;
         const isAdmin = response.data.isAdmin;
         const isLogin = "true";
-        localStorage.setItem("authToken", token);
-        localStorage.setItem("isAdmin", isAdmin);
-        localStorage.setItem("isLogin", isLogin);
+        sessionStorage.setItem("authToken", token);
+        sessionStorage.setItem("isAdmin", isAdmin);
+        sessionStorage.setItem("isLogin", isLogin);
         onLoginSuccess(isAdmin);
         navigate("/home");
       }
