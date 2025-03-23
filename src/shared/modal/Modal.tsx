@@ -10,7 +10,7 @@ const Modal: React.FC = () => {
     <>
       {isOpen && (
         <div className="modal-backdrop">
-          <div className="modal-content">
+          <div className="modal-content text-2xl">
             {content}
             <div className="cls-btn">
               <button
