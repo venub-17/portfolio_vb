@@ -41,14 +41,17 @@ const Skillsentry = () => {
     const formValue = Object.fromEntries(formData);
 
     const skillsArray: string[] = [];
-    console.log(formValue);
-    // Collect all skill inputs (they now have unique names like "skill-0", "skill-1", etc.)
     tech.forEach((_, idx) => {
       const skillValue = formData.get(`skill-${idx}`) as string;
       if (skillValue) {
         skillsArray.push(skillValue);
       }
     });
+    const data = {
+      skill_title: formValue.title,
+      newSkill: skillsArray,
+    };
+    console.log(data);
   };
   const onTitleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
