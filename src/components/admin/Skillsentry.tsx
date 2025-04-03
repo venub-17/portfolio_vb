@@ -1,21 +1,17 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { useData } from "../../shared/dataprovider/DataContext";
 
 const Skillsentry = () => {
-  const skillTitles = [
-    { id: 1, name: "Web Technologies" },
-    { id: 2, name: "Backend Technology" },
-  ];
+  const { skills } = useData();
+  const [skillTitles, setSkillTitles] = useState<string[]>([]);
 
-  // Initialize state as an array with a single empty string
   const [tech, setTech] = useState<string[]>([""]);
 
-  // Function to add a new empty input for skill
   const onAddTech = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     setTech((prevTech) => [...prevTech, ""]);
   };
 
-  // Function to remove a skill input by index
   const onRemoveSkill = (
     e: React.MouseEvent<HTMLButtonElement>,
     index: number
@@ -23,6 +19,12 @@ const Skillsentry = () => {
     e.preventDefault();
     setTech((prevTech) => prevTech.filter((_, i) => i !== index));
   };
+  useEffect(() => {
+    if (skills.length > 0) {
+      const titles = skills.map((item) => item.skill_title);
+      setSkillTitles(titles);
+    }
+  }, [skills]);
 
   // Function to handle changes in each skill input field
   const handleTechChange = (
@@ -48,11 +50,15 @@ const Skillsentry = () => {
       }
     });
   };
+  const onTitleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    console.log(skills, "skills");
+  };
 
   return (
     <>
       <div className="bg-[#4f596a] mb-8 rounded text-black px-20 py-10">
-        <form className="w-1/2">
+        <form className="w-1/2" onSubmit={onTitleSubmit}>
           <h1 className="text-2xl mb-4">Please add Skill Title here...</h1>
           <div className="flex flex-col gap-2 mb-2">
             <label htmlFor="">Tech Title</label>
@@ -62,7 +68,10 @@ const Skillsentry = () => {
             />
           </div>
           <div className="flex justify-end">
-            <button className="rounded px-8 py-4 text-[#000000] bg-[#75BBF5]">
+            <button
+              type="submit"
+              className="rounded px-8 py-4 text-[#000000] bg-[#75BBF5]"
+            >
               Add Title
             </button>
           </div>
@@ -91,8 +100,8 @@ const Skillsentry = () => {
               >
                 <option value="dummy">Select Title</option>
                 {skillTitles.map((option) => (
-                  <option key={option.id} value={option.id}>
-                    {option.name}
+                  <option key={option} value={option}>
+                    {option}
                   </option>
                 ))}
               </select>

@@ -1,29 +1,13 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import "../App.css";
-import api from "../shared/axiosInstance";
-import { useModal } from "../shared/modal/ModalContext";
-interface Skill {
-  skill_title: string;
-  newSkill: string[];
-}
-const Skills = () => {
-  const [isLoading, setIsLoading] = useState(false);
-  const [skills, setSkills] = useState<Skill[]>([]);
-  const { openModal } = useModal();
 
+import { useData } from "../shared/dataprovider/DataContext";
+
+const Skills = () => {
+  const { skills, fetchSkills, isLoading } = useData();
   useEffect(() => {
-    setIsLoading(true);
-    api
-      .get("/skills")
-      .then((data) => {
-        setSkills(data.data.skills);
-        setIsLoading(false);
-      })
-      .catch((error) => {
-        setIsLoading(false);
-        openModal((error as Error).message);
-      });
-  }, []);
+    fetchSkills();
+  }, [fetchSkills]);
   return (
     <>
       <div className="overflow-hidden p-4">
