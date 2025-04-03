@@ -57,7 +57,7 @@ export const DataProvider: React.FC<DataProviderProps> = ({ children }) => {
   // Fetch skills
   const fetchSkills = async () => {
     if (hasFetchedSkills) return;
-
+    if (skills.length > 0) return;
     setIsLoading(true);
     try {
       const response = await api.get<{ skills: Skill[] }>("/skills/get");

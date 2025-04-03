@@ -1,35 +1,12 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import "../App.css";
-import api from "../shared/axiosInstance";
-import { useModal } from "../shared/modal/ModalContext";
-interface Skill {
-  skill_title: string;
-  newSkill: string[];
-}
-const Skills = () => {
-  const [isLoading, setIsLoading] = useState(false);
-  const [skills, setSkills] = useState<Skill[]>([]);
+import { useData } from "../shared/dataprovider/DataContext";
 
-  const [isDataFetched, setIsDataFetched] = useState(false);
-  const { openModal } = useModal();
+const Skills = () => {
+  const { isLoading, skills, fetchSkills } = useData();
   useEffect(() => {
-    // Fetch data only if it hasn't been fetched already
-    if (!isDataFetched) {
-      setIsLoading(true);
-      console.log("calling");
-      api
-        .get("/skills/get")
-        .then((data) => {
-          setSkills(data.data.skills);
-          setIsLoading(false);
-          setIsDataFetched(true); // Mark as fetched to avoid future API calls
-        })
-        .catch((error) => {
-          setIsLoading(false);
-          openModal((error as Error).message); // Show error in modal
-        });
-    }
-  }, [isDataFetched, openModal]);
+    fetchSkills();
+  }, [fetchSkills]);
   return (
     <>
       <div className="overflow-hidden p-4">

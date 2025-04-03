@@ -2,7 +2,7 @@ const User = () => {
   return (
     <>
       <section className="text-center text-white m-0 p-0">
-        <div className="max-h-20 sm:max-h-none ">
+        <div className="max-h-20 max-sm:max-h-none ">
           <table className="min-w-full w-3/4 bg-[#959aa1] rounded">
             <thead className="sticky top-0 z-10 text-xl text-center text-gray-300 rounded uppercase border-b bg-[#4e5662]">
               <tr>

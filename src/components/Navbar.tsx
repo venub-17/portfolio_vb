@@ -114,7 +114,7 @@ const Navbar = ({ isLoginStatus, isAdminStatus, onLogout }: NavbarProps) => {
         </div>
       </div>
       {isMenuOpen && (
-        <ul className="flex-col md:hidden gap-x-6">
+        <ul className="flex-col md:hidden mt-4 gap-x-6">
           <li className="px-4 py-2 ">
             <Link to={"/"}>Home</Link>
           </li>
@@ -137,11 +137,18 @@ const Navbar = ({ isLoginStatus, isAdminStatus, onLogout }: NavbarProps) => {
               <Link to={"/login"}>Login</Link>
             </li>
           ) : (
-            <button onClick={onLogout}>Logout</button>
+            <li className="px-4 py-2 ">
+              <button onClick={onLogout}>Logout</button>
+            </li>
           )}
-          <button className="px-4 py-2 bg-[#FFFFFF] text-[#3b4759] rounded-md">
-            Resume
-          </button>
+          <li className="px-4 py-2">
+            <button
+              className="px-4 py-2 bg-[#FFFFFF] text-[#3b4759] rounded-md"
+              onClick={onDownloadresume}
+            >
+              Resume
+            </button>
+          </li>
         </ul>
       )}
     </nav>

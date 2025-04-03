@@ -54,6 +54,10 @@ function App() {
           element: <PrivateRoute isAuthenticated={isAuthenticated} />,
           children: [
             {
+              path: "",
+              element: <User />,
+            },
+            {
               path: "project-data",
               element: <Projectsentry />,
             },
