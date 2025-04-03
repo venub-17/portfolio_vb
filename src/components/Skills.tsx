@@ -6,7 +6,7 @@ const Skills = () => {
   const { isLoading, skills, fetchSkills } = useData();
   useEffect(() => {
     fetchSkills();
-  }, [fetchSkills]);
+  }, [isLoading, fetchSkills]);
   return (
     <>
       <div className="overflow-hidden p-4">
@@ -16,7 +16,7 @@ const Skills = () => {
             skills.map((item, idx) => (
               <div
                 key={idx}
-                className="leading-snug rounded-lg text-center text-white w-full shadow-lg bg-[#626c7a] p-4"
+                className="leading-snug rounded-lg text-center text-white w-full shadow-lg bg-[#626c7a] p-4 max-sm:px-8"
               >
                 <h2 className="text-2xl md:text-3xl">{item.skill_title}</h2>
                 <ul className="text-lg md:text-xl text-white">

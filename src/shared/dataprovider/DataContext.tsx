@@ -1,10 +1,4 @@
-import React, {
-  createContext,
-  useState,
-  useContext,
-  useEffect,
-  ReactNode,
-} from "react";
+import React, { createContext, useState, useContext, ReactNode } from "react";
 import api from "../axiosInstance";
 import { useModal } from "../modal/ModalContext";
 
@@ -61,6 +55,7 @@ export const DataProvider: React.FC<DataProviderProps> = ({ children }) => {
     setIsLoading(true);
     try {
       const response = await api.get<{ skills: Skill[] }>("/skills/get");
+      console.log("nthtime");
       setSkills(response.data.skills);
       setHasFetchedSkills(true);
     } catch (err) {
@@ -87,12 +82,6 @@ export const DataProvider: React.FC<DataProviderProps> = ({ children }) => {
       setIsLoading(false);
     }
   };
-
-  // Effect to fetch skills and projects on mount
-  useEffect(() => {
-    fetchSkills();
-    fetchProjects();
-  }, []);
 
   return (
     <DataContext.Provider

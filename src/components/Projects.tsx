@@ -23,7 +23,7 @@ const Projects = () => {
   }, {} as GroupedRoles);
 
   return (
-    <div className="px-32 py-32 max-sm:px-20 max-sm:py-20 sm:px-20 sm:py-20">
+    <div className="px-32 py-32 max-sm:px-1 max-sm:py-20 sm:px-20 sm:py-20">
       {Object.keys(groupedRoles).map((company, index) => (
         <div key={index} className="w-3/4 my-0 mx-auto">
           <h2 className="text-5xl max-sm:text-4xl mb-4">{company}</h2>

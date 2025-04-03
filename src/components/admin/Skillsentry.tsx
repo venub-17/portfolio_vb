@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { useData } from "../../shared/dataprovider/DataContext";
+import api from "../../shared/axiosInstance";
+import { useModal } from "../../shared/modal/ModalContext";
 
 const Skillsentry = () => {
   const { skills } = useData();
+  const { openModal } = useModal();
   const [skillTitles, setSkillTitles] = useState<string[]>([]);
 
   const [tech, setTech] = useState<string[]>([""]);
@@ -35,7 +38,7 @@ const Skillsentry = () => {
     updatedTech[index] = e.target.value; // Update the specific index
     setTech(updatedTech); // Update the state
   };
-  const onSkillSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const onSkillSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
     const formValue = Object.fromEntries(formData);
@@ -51,7 +54,8 @@ const Skillsentry = () => {
       skill_title: formValue.title,
       newSkill: skillsArray,
     };
-    console.log(data);
+    const response = await api.post("/skills/post", data);
+    openModal(response.data.message);
   };
   const onTitleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
