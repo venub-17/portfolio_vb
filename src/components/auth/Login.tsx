@@ -41,7 +41,7 @@ const Login = ({ onLoginSuccess }: LoginProps) => {
   return (
     <>
       <div className="flex items-center justify-center mt-5">
-        <div className="bg-[#4f596a] rounded text-black px-20 py-10 ">
+        <div className="bg-[#434d5c] rounded text-black px-20 py-10 ">
           <h1 className="text-center text-4xl mb-5">Login</h1>
           <form onSubmit={onLogin}>
             <div className="flex gap-8 flex-col">

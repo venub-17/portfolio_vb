@@ -45,7 +45,7 @@ const Navbar = ({ isLoginStatus, isAdminStatus, onLogout }: NavbarProps) => {
   };
 
   return (
-    <nav className="p-4 nav_container border-b">
+    <nav className="p-4 nav_container bg-[#2e394a] border-b">
       <div className="flex items-center justify-between">
         <div className="flex justify-center items-center gap-2">
           <img

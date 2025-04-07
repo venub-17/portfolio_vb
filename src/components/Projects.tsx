@@ -30,7 +30,7 @@ const Projects = () => {
           {groupedRoles[company].map((role, roleIndex) => (
             <div
               key={roleIndex}
-              className="role py-8 rounded-lg mb-8 text-white w-full shadow-lg bg-[#4f596a] p-4"
+              className="role py-8 rounded-lg mb-8 text-white w-full shadow-lg bg-[#434d5c] p-4"
             >
               <h3 className="text-3xl leading-normal">{role.client}</h3>{" "}
               <div className="flex max-sm:flex-col max-sm:gap-3 gap-10  text-2xl py-4">
