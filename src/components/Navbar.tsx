@@ -37,7 +37,11 @@ const Navbar = () => {
               <Link to={"/"}>Home</Link>
             </li>
             <li className="px-4 py-2 ">
+<<<<<<< Updated upstream
               <Link to={"/experience"}>Experience</Link>
+=======
+              <Link to={"/about"}>About</Link>
+>>>>>>> Stashed changes
             </li>
             <li className="px-4 py-2 ">
               <Link to={"/projects"}>Projects</Link>
@@ -55,6 +59,9 @@ const Navbar = () => {
         <ul className="flex-col md:hidden gap-x-6">
           <li className="px-4 py-2 ">
             <Link to={"/"}>Home</Link>
+          </li>
+          <li className="px-4 py-2 ">
+            <Link to={"/about"}>About</Link>
           </li>
           <li className="px-4 py-2 ">
             <Link to={"/projects"}>Projects</Link>
