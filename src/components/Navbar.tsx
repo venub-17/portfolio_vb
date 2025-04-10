@@ -80,7 +80,7 @@ const Navbar = ({ isLoginStatus, isAdminStatus, onLogout }: NavbarProps) => {
             <li className="px-4 py-2 ">
               <Link to={"/"}>Home</Link>
             </li>
-            <li>
+            <li className="px-4 py-2 ">
               <Link to={"/about"}>About</Link>
             </li>
             {/* <li className="px-4 py-2 ">
