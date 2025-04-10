@@ -1,7 +1,43 @@
 import "../App.css";
-import About from "./About";
-import Skills from "./Skills";
+
+import { useEffect, useState } from "react";
+
+import { Link } from "react-router-dom";
+
 const Home = () => {
+  const [wordIndex, setWordIndex] = useState(0);
+  const [letterIndex, setLetterIndex] = useState(0);
+  const [displayedText, setDisplayedText] = useState("");
+
+  const positions = [
+    "Angular Developer",
+    "React Developer",
+    "NodeJs Developer",
+    "Full-Stack Developer",
+    "Front-End Developer",
+    "UI Developer",
+    "Web Developer",
+  ];
+
+  useEffect(() => {
+    const currentWord = positions[wordIndex];
+
+    const interval = setInterval(() => {
+      if (letterIndex < currentWord.length) {
+        setDisplayedText((prev) => prev + currentWord[letterIndex]);
+        setLetterIndex((prev) => prev + 1);
+      } else {
+        clearInterval(interval);
+        setTimeout(() => {
+          setDisplayedText("");
+          setLetterIndex(0);
+          setWordIndex((prev) => (prev + 1) % positions.length);
+        }, 500); // Wait 1 second before switching to the next word
+      }
+    }, 100); // Adjust speed for each letter
+
+    return () => clearInterval(interval);
+  }, [letterIndex, wordIndex]);
   return (
     <>
       <section className="hero-section bg-gray-600 px-32 py-32 max-sm:px-20 max-sm:py-20 sm:px-20 sm:py-20">
@@ -27,11 +63,24 @@ const Home = () => {
           </div>
         </div>
       </section>
-      <section className="skills_container px-32 py-20">
-        <About />
-      </section>
-      <section className="skills_container sm-425:px-24 xs:px-16 px-32 py-20 ">
-        <Skills />
+
+      <section className="skills_container px-20 py-20">
+        <h1 className="text-2xl xs:text-3xl sm-425:text-5xl transition-opacity duration-500 ease-in-out  opacity-100 delay-75">
+          I'm a{" "}
+          <strong className="px-2 py-1 rounded  text-[#fff]">
+            {displayedText}
+          </strong>
+        </h1>
+        <small className="mt-4 text-sm inline-block ">
+          Want to know more about me?
+          <Link
+            className="text-white hover:underline  hover:text-[#a9a9a9] pl-2 hover:pb-2"
+            to={"about"}
+          >
+            Click me
+          </Link>
+          😜
+        </small>
       </section>
     </>
   );

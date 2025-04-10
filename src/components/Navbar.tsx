@@ -80,6 +80,9 @@ const Navbar = ({ isLoginStatus, isAdminStatus, onLogout }: NavbarProps) => {
             <li className="px-4 py-2 ">
               <Link to={"/"}>Home</Link>
             </li>
+            <li>
+              <Link to={"/about"}>About</Link>
+            </li>
             {/* <li className="px-4 py-2 ">
               <Link to={"/experience"}>Experience</Link>
             </li> */}
@@ -117,6 +120,9 @@ const Navbar = ({ isLoginStatus, isAdminStatus, onLogout }: NavbarProps) => {
         <ul className="flex-col md:hidden mt-4 gap-x-6">
           <li className="px-4 py-2 ">
             <Link to={"/"}>Home</Link>
+          </li>
+          <li className="px-4 py-2 ">
+            <Link to={"/about"}>About</Link>
           </li>
           <li className="px-4 py-2 ">
             <Link to={"/projects"}>Projects</Link>

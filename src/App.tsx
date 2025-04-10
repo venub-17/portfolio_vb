@@ -1,10 +1,3 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import "./App.css";
-import Experience from "./components/Experience";
-import Contact from "./components/Contact";
-import Projects from "./components/Projects";
-import Home from "./components/Home";
-import RootLayout from "./components/RootLayout";
 import Projectsentry from "./components/admin/Projectsentry";
 import User from "./components/admin/User";
 import PrivateRoute from "./components/PrivateRoute";
@@ -13,6 +6,12 @@ import Login from "./components/auth/Login";
 import Signup from "./components/auth/Signup";
 import { useState } from "react";
 import UploadResume from "./components/admin/UploadResume";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import RootLayout from "./components/RootLayout";
+import Home from "./components/Home";
+import Projects from "./components/Projects";
+import Contact from "./components/Contact";
+import AboutPage from "./pages/AboutPage";
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(
@@ -41,10 +40,9 @@ function App() {
           element: <Projects />,
         },
         {
-          path: "experience",
-          element: <Experience />,
+          path: "about",
+          element: <AboutPage />,
         },
-
         {
           path: "contact",
           element: <Contact />,
@@ -86,6 +84,7 @@ function App() {
       ],
     },
   ]);
+
   return (
     <>
       <RouterProvider router={router} />
