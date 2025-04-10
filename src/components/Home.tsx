@@ -1,8 +1,7 @@
 import "../App.css";
 
 import { useEffect, useState } from "react";
-import About from "./About";
-import Skills from "./Skills";
+
 import { Link } from "react-router-dom";
 
 const Home = () => {
@@ -82,13 +81,6 @@ const Home = () => {
           </Link>
           😜
         </small>
-      </section>
-
-      <section className="skills_container px-32 py-20">
-        <About />
-      </section>
-      <section className="skills_container sm-425:px-24 xs:px-16 px-32 py-20 ">
-        <Skills />
       </section>
     </>
   );

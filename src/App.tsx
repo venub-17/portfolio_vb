@@ -9,9 +9,9 @@ import UploadResume from "./components/admin/UploadResume";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import RootLayout from "./components/RootLayout";
 import Home from "./components/Home";
-import Experience from "./components/Experience";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
+import AboutPage from "./pages/AboutPage";
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(
@@ -40,8 +40,8 @@ function App() {
           element: <Projects />,
         },
         {
-          path: "experience",
-          element: <Experience />,
+          path: "about",
+          element: <AboutPage />,
         },
         {
           path: "contact",
