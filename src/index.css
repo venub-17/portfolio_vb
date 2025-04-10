@@ -11,14 +11,7 @@ html{
   scroll-behavior: smooth;
 }
 body{
-<<<<<<< Updated upstream
-  background-color: #3b4759;
-  font-family: sans-serif;
-  line-height: 1;
-  font-weight: 400;
-  color: #f2f2f2
-}
-=======
+
   background-color: #293343;
   font-family: 'sans-serif';
   line-height: 1;
@@ -48,4 +41,3 @@ body{
 /*
  *  STYLE 2
  */
->>>>>>> Stashed changes

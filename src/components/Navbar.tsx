@@ -1,18 +1,62 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import imgVenu from "../assets/3d_vb.jpg";
 import "../App.css";
+import api from "../shared/axiosInstance";
+import { useModal } from "../shared/modal/ModalContext";
 
-const Navbar = () => {
+interface NavbarProps {
+  isLoginStatus: boolean;
+  isAdminStatus: boolean;
+  onLogout: () => void;
+}
+
+const Navbar = ({ isLoginStatus, isAdminStatus, onLogout }: NavbarProps) => {
   const [isMenuOpen, setMenuOpen] = useState(false);
+  const { openModal } = useModal();
 
   const onMenuOpen = () => {
     setMenuOpen(!isMenuOpen);
   };
+  const onDownloadresume = async () => {
+    if (isLoginStatus) {
+      try {
+        const response = await api.get("/resume/download", {
+          responseType: "blob", // Important for handling binary data
+        });
+        // Create a temporary URL for the blob
+        const url = window.URL.createObjectURL(response.data);
+        // Create a link element and trigger the download
+        const link = document.createElement("a");
+        link.href = url;
+        link.setAttribute("download", "VenuBeenaveni.pdf"); // Set the filename
+        document.body.appendChild(link);
+        link.click();
+        // Clean up
+        document.body.removeChild(link);
+        window.URL.revokeObjectURL(url);
+      } catch (error) {
+        console.error("Error downloading file:", error);
+        alert("Failed to download file");
+      }
+    } else {
+      openModal(`Hey dude, you’ve got to log in first! No free rides. 😉`);
+    }
+  };
 
   return (
-    <nav className="p-4 nav_container">
+    <nav className="p-4 nav_container bg-[#2e394a] border-b">
       <div className="flex items-center justify-between">
-        <h1 className=" text-2xl font-bold">Header</h1>
+        <div className="flex justify-center items-center gap-2">
+          <img
+            src={imgVenu}
+            alt="Venu Beenaveni"
+            className="border-2 rounded-full"
+            height={40}
+            width={40}
+          />
+          <h1 className=" text-2xl font-bold">Venu Beenaveni</h1>
+        </div>
         <div className="md:hidden">
           <button onClick={onMenuOpen}>
             <svg
@@ -31,32 +75,49 @@ const Navbar = () => {
             </svg>
           </button>
         </div>
-        <div className="hidden md:flex text-2xl items-center gap-x-6">
+        <div className="hidden  md:flex text-2xl items-center gap-x-6">
           <ul className="flex gap-x-6 ">
             <li className="px-4 py-2 ">
               <Link to={"/"}>Home</Link>
             </li>
-            <li className="px-4 py-2 ">
-<<<<<<< Updated upstream
-              <Link to={"/experience"}>Experience</Link>
-=======
+            <li>
               <Link to={"/about"}>About</Link>
->>>>>>> Stashed changes
             </li>
+            {/* <li className="px-4 py-2 ">
+              <Link to={"/experience"}>Experience</Link>
+            </li> */}
             <li className="px-4 py-2 ">
               <Link to={"/projects"}>Projects</Link>
             </li>
-            <li className="px-4 py-2 ">
-              <Link to={"/contact"}>Contact</Link>
-            </li>
+            {isLoginStatus && (
+              <li className="px-4 py-2 ">
+                <Link to={"/contact"}>Contact</Link>
+              </li>
+            )}
+
+            {isAdminStatus && (
+              <li className="px-4 py-2 ">
+                <Link to={"/admin"}>Admin</Link>
+              </li>
+            )}
+            {!isLoginStatus ? (
+              <li className="px-4 py-2 ">
+                <Link to={"/login"}>Login</Link>
+              </li>
+            ) : (
+              <button onClick={onLogout}>Logout</button>
+            )}
           </ul>
-          <button className="px-4 py-2 bg-white text-blue-500 rounded-md">
+          <button
+            onClick={onDownloadresume}
+            className="px-4 py-2 bg-[#FFFFFF] text-[#374253] rounded-md"
+          >
             Resume
           </button>
         </div>
       </div>
       {isMenuOpen && (
-        <ul className="flex-col md:hidden gap-x-6">
+        <ul className="flex-col md:hidden mt-4 gap-x-6">
           <li className="px-4 py-2 ">
             <Link to={"/"}>Home</Link>
           </li>
@@ -66,12 +127,34 @@ const Navbar = () => {
           <li className="px-4 py-2 ">
             <Link to={"/projects"}>Projects</Link>
           </li>
-          <li className="px-4 py-2 ">
-            <Link to={"/contact"}>Contact</Link>
+          {isLoginStatus && (
+            <li className="px-4 py-2 ">
+              <Link to={"/contact"}>Contact</Link>
+            </li>
+          )}
+
+          {isAdminStatus && (
+            <li className="px-4 py-2 ">
+              <Link to={"/admin"}>Admin</Link>
+            </li>
+          )}
+          {!isLoginStatus ? (
+            <li className="px-4 py-2 ">
+              <Link to={"/login"}>Login</Link>
+            </li>
+          ) : (
+            <li className="px-4 py-2 ">
+              <button onClick={onLogout}>Logout</button>
+            </li>
+          )}
+          <li className="px-4 py-2">
+            <button
+              className="px-4 py-2 bg-[#FFFFFF] text-[#3b4759] rounded-md"
+              onClick={onDownloadresume}
+            >
+              Resume
+            </button>
           </li>
-          <button className="px-4 py-2 bg-white text-blue-500 rounded-md">
-            Resume
-          </button>
         </ul>
       )}
     </nav>

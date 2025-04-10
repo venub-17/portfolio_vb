@@ -1,10 +1,10 @@
-import { Link } from "react-router-dom";
 import "../App.css";
-<<<<<<< Updated upstream
-=======
-import { useEffect, useState } from "react";
 
->>>>>>> Stashed changes
+import { useEffect, useState } from "react";
+import About from "./About";
+import Skills from "./Skills";
+import { Link } from "react-router-dom";
+
 const Home = () => {
   const [wordIndex, setWordIndex] = useState(0);
   const [letterIndex, setLetterIndex] = useState(0);
@@ -41,7 +41,7 @@ const Home = () => {
   }, [letterIndex, wordIndex]);
   return (
     <>
-      <section className="hero-section bg-gray-600 px-32 py-32">
+      <section className="hero-section bg-gray-600 px-32 py-32 max-sm:px-20 max-sm:py-20 sm:px-20 sm:py-20">
         <div className="hero_container  max-w-7xl  m-auto my-0 items-center">
           <div className="hero_text_container">
             <strong>
@@ -64,9 +64,7 @@ const Home = () => {
           </div>
         </div>
       </section>
-<<<<<<< Updated upstream
-      <section className="skills_container"></section>
-=======
+
       <section className="skills_container px-20 py-20">
         <h1 className="text-2xl xs:text-3xl sm-425:text-5xl transition-opacity duration-500 ease-in-out  opacity-100 delay-75">
           I'm a{" "}
@@ -85,7 +83,13 @@ const Home = () => {
           😜
         </small>
       </section>
->>>>>>> Stashed changes
+
+      <section className="skills_container px-32 py-20">
+        <About />
+      </section>
+      <section className="skills_container sm-425:px-24 xs:px-16 px-32 py-20 ">
+        <Skills />
+      </section>
     </>
   );
 };

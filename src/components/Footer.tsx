@@ -7,6 +7,7 @@ const Footer = () => {
           {/* Footer Content */}
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-10">
+              {/* Logo/Tagline */}
               <div>
                 <h2 className="text-2xl font-bold text-white">
                   Venu Beenaveni
@@ -16,6 +17,7 @@ const Footer = () => {
                 </p>
               </div>
 
+              {/* Social Icons */}
               <div className="space-y-2">
                 <h3 className="text-white font-semibold">Connect</h3>
                 <div className="flex space-x-4 mt-2 text-xl">
@@ -40,7 +42,7 @@ const Footer = () => {
                     className="hover:text-white"
                   >
                     <FaEnvelope />
-                  </a>  */}
+                  </a> */}
                 </div>
               </div>
             </div>

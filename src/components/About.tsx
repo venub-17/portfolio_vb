@@ -1,38 +1,47 @@
+import { useEffect, useState } from "react";
+
 const About = () => {
+  const [wordIndex, setWordIndex] = useState(0);
+  const [letterIndex, setLetterIndex] = useState(0);
+  const [displayedText, setDisplayedText] = useState("");
+
+  const positions = [
+    "Angular Developer",
+    "React Developer",
+    "NodeJs Developer",
+    "Full-Stack Developer",
+    "Front-End Developer",
+    "UI Developer",
+    "Web Developer",
+  ];
+  useEffect(() => {
+    const currentWord = positions[wordIndex];
+
+    const interval = setInterval(() => {
+      if (letterIndex < currentWord.length) {
+        setDisplayedText((prev) => prev + currentWord[letterIndex]);
+        setLetterIndex((prev) => prev + 1);
+      } else {
+        clearInterval(interval);
+        setTimeout(() => {
+          setDisplayedText("");
+          setLetterIndex(0);
+          setWordIndex((prev) => (prev + 1) % positions.length);
+        }, 500); // Wait 1 second before switching to the next word
+      }
+    }, 100); // Adjust speed for each letter
+
+    return () => clearInterval(interval);
+  }, [letterIndex, wordIndex]);
   return (
     <>
-      <section className="mx-auto px-4 py-10 text-gray-200">
-        <h2 className="text-5xl font-bold mb-6 text-white">
-          Hey there! I'm Venu Beenaveni &amp; I am a Front-End Developer
-        </h2>
-        <p className="mb-4 text-3xl text-[#bdc8e7]">
-          I'm passionate about building responsive and modern web experiences.
-          With over 8 years of hands-on experience, I specialize in crafting
-          elegant UI/UX designs using modern frameworks like{" "}
-          <span className="font-medium text-white">React</span> and{" "}
-          <span className="font-medium text-white">Angular</span>, along with
-          the versatility of{" "}
-          <span className="font-medium text-white">Tailwind CSS</span> for
-          pixel-perfect styling.
-        </p>
-        <p className="mb-4 text-2xl">
-          My journey began with a fascination for how technology can transform
-          everyday interactions, driving me to master the art of merging clean,
-          efficient code with visually stunning designs. I thrive on tackling
-          challenging problems—whether it's optimizing performance or designing
-          intuitive interfaces that truly connect with users.
-        </p>
-        <p className="mb-4 text-2xl">
-          Currently, I'm channeling my energy into personal projects that push
-          the boundaries of front-end development, while also mentoring emerging
-          talent in the field. I'm all about sharing best practices,
-          continuously learning, and keeping up with the latest trends in UI/UX.
-        </p>
-        <p className="text-xl">
-          Let's team up and create digital experiences that not only look
-          amazing but also work seamlessly—one line of code at a time! 🚀
-        </p>
-      </section>
+      <small className="mb-4 inline-block">Want to know more about me?</small>
+      <h1 className="text-xl xs:text-2xl sm-425:text-4xl transition-opacity duration-500 ease-in-out  opacity-100 delay-75">
+        I'm a{" "}
+        <strong className="px-2 py-1 rounded  text-[#fff]">
+          {displayedText}
+        </strong>
+      </h1>
     </>
   );
 };

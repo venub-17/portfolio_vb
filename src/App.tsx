@@ -1,40 +1,3 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import "./App.css";
-import Experience from "./components/Experience";
-import Contact from "./components/Contact";
-import Projects from "./components/Projects";
-import Home from "./components/Home";
-import RootLayout from "./components/RootLayout";
-<<<<<<< Updated upstream
-
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <RootLayout />,
-    children: [
-      {
-        path: "/",
-        element: <Home />,
-      },
-      {
-        path: "projects",
-        element: <Projects />,
-      },
-      {
-        path: "experience",
-        element: <Experience />,
-      },
-
-      {
-        path: "contact",
-        element: <Contact />,
-      },
-    ],
-  },
-]);
-
-function App() {
-=======
 import Projectsentry from "./components/admin/Projectsentry";
 import User from "./components/admin/User";
 import PrivateRoute from "./components/PrivateRoute";
@@ -43,7 +6,12 @@ import Login from "./components/auth/Login";
 import Signup from "./components/auth/Signup";
 import { useState } from "react";
 import UploadResume from "./components/admin/UploadResume";
-import AboutPage from "./pages/AboutPage";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import RootLayout from "./components/RootLayout";
+import Home from "./components/Home";
+import Experience from "./components/Experience";
+import Projects from "./components/Projects";
+import Contact from "./components/Contact";
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(
@@ -74,10 +42,6 @@ function App() {
         {
           path: "experience",
           element: <Experience />,
-        },
-        {
-          path: "about",
-          element: <AboutPage />,
         },
         {
           path: "contact",
@@ -120,7 +84,7 @@ function App() {
       ],
     },
   ]);
->>>>>>> Stashed changes
+
   return (
     <>
       <RouterProvider router={router} />

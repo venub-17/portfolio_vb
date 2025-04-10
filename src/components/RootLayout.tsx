@@ -1,14 +1,11 @@
 import { Outlet } from "react-router-dom";
 import Header from "./Header";
+import Footer from "./Footer";
 
 const RootLayout = () => {
   return (
     <>
-<<<<<<< Updated upstream
-      <Header />
-      <Outlet />
-=======
-      <div className="flex flex-col min-h-screen  ">
+      <div className="flex flex-col min-h-screen ">
         <Header />
 
         <main className="flex-grow">
@@ -17,7 +14,6 @@ const RootLayout = () => {
 
         <Footer />
       </div>
->>>>>>> Stashed changes
     </>
   );
 };
