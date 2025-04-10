@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import "../App.css";
 import { useData } from "../shared/dataprovider/DataContext";
+import SkillCard from "./SkillCard";
 
 const Skills = () => {
   const { isLoading, skills, fetchSkills } = useData();
@@ -10,23 +11,17 @@ const Skills = () => {
   return (
     <>
       <div className="overflow-hidden p-4">
+        {!isLoading && (
+          <h1 className="text-3xl mb-4 pb-10">Tech That Powers My Work</h1>
+        )}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {isLoading && <p>Loading the skills</p>}
           {!isLoading &&
-            skills.map((item, i) => {
+            skills.map((item) => {
               return (
-                <div
-                  key={i}
-                  className="flex items-center gap-4 border px-3 py-3 border-gray-600 rounded-md"
-                >
-                  <img
-                    src={item.skill_link}
-                    width={30}
-                    height={30}
-                    alt={item.skill_name}
-                  />
-                  <p className="text-2xl">{item.skill_name}</p>
-                </div>
+                <>
+                  <SkillCard link={item.skill_link} name={item.skill_name} />
+                </>
               );
             })}
         </div>
