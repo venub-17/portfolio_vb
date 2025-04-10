@@ -24,7 +24,7 @@ const Skillsentry = () => {
   };
   useEffect(() => {
     if (skills.length > 0) {
-      const titles = skills.map((item) => item.skill_title);
+      const titles = skills.map((item) => item.skill_link);
       setSkillTitles(titles);
     }
   }, [skills]);

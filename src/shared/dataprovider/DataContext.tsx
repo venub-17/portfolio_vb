@@ -4,8 +4,8 @@ import { useModal } from "../modal/ModalContext";
 
 // Define interfaces for your data
 interface Skill {
-  skill_title: string;
-  newSkill: string[];
+  skill_link: string;
+  skill_name: string;
 }
 
 interface Project {
@@ -55,10 +55,10 @@ export const DataProvider: React.FC<DataProviderProps> = ({ children }) => {
     setIsLoading(true);
     try {
       const response = await api.get<{ skills: Skill[] }>("/skills/get");
-      console.log("nthtime");
       setSkills(response.data.skills);
       setHasFetchedSkills(true);
     } catch (err) {
+      console.log(err, "err");
       setError(err instanceof Error ? err.message : "Failed to fetch skills");
       openModal("Failed to fetch skills");
     } finally {
