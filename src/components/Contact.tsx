@@ -62,7 +62,7 @@ const Contact = () => {
           </div>
         </div>
 
-        <div className="contact_info shadow-[rgba(0,_0,_0,_0.25)_0px_25px_50px_-12px] rounded bg-[#293343] text-black p-20">
+        <div className="contact_info shadow-[rgba(0,_0,_0,_0.25)_0px_25px_50px_-12px] rounded-lg bg-[#293343] text-black p-20">
           <form onSubmit={onSubmitContact}>
             <div className="flex flex-col gap-2 mb-4">
               <label htmlFor="">Name</label>
@@ -92,7 +92,7 @@ const Contact = () => {
               ></textarea>
             </div>
             <div className="flex justify-center">
-              <button className=" bg-slate-400 text-gray-900 px-8 py-4 rounded ">
+              <button className="  bg-[#3a5a83] text-[#ffffff] px-8 py-4 rounded ">
                 Send
               </button>
             </div>
