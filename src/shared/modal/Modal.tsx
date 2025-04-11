@@ -15,7 +15,7 @@ const Modal: React.FC = () => {
             <div className="cls-btn">
               <button
                 onClick={closeModal}
-                className="rounded px-6 py-3 text-[#000000] bg-[#75BBF5]"
+                className="rounded px-6 py-3 bg-slate-400 hover:bg-slate-500 text-gray-900"
               >
                 Close
               </button>

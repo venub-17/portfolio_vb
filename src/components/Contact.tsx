@@ -31,10 +31,8 @@ const Contact = () => {
               Let's build the web for future. 🚀
             </small>
             <div className="space-y-2 mt-10">
-              <h3 className="text-white font-semibold text-2xl">
-                Connect me at
-              </h3>
-              <div className="flex space-x-4 mt-2 text-4xl">
+              <small className=" font-semibold text-2xl">Connect me at</small>
+              <div className="flex space-x-4 mt-2 text-3xl">
                 <a
                   href="https://github.com/venub-17"
                   target="_blank"
@@ -92,7 +90,7 @@ const Contact = () => {
               ></textarea>
             </div>
             <div className="flex justify-center">
-              <button className="  bg-[#3a5a83] text-[#ffffff] px-8 py-4 rounded ">
+              <button className="  bg-[#3a5a83] hover:bg-[#345176]  text-[#ffffff] px-8 py-4 rounded ">
                 Send
               </button>
             </div>

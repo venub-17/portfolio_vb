@@ -62,7 +62,7 @@ const Login = ({ onLoginSuccess }: LoginProps) => {
                 />
               </div>
               <div className="flex justify-center ">
-                <button className="rounded px-8 text-xl py-4 tracking-wider text-[#ffffff] bg-[#3a5a83]">
+                <button className="rounded px-8 text-xl py-4 tracking-wider hover:bg-[#345176]  text-[#ffffff] bg-[#3a5a83]">
                   Login
                 </button>
               </div>

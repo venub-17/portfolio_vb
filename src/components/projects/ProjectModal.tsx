@@ -38,7 +38,7 @@ const ProjectModal: React.FC<Prop> = ({ open, onClose, content }) => {
           <div className="modal-footer">
             <button
               onClick={onClose}
-              className="rounded px-5 py-2 text-[#000000] bg-[#75BBF5]"
+              className="rounded px-5 py-2  bg-slate-400 hover:bg-slate-500 text-gray-900"
             >
               Close
             </button>
