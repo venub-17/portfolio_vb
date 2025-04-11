@@ -5,10 +5,10 @@ const About = () => {
         <strong>
           <em className="text-xl font-medium block mb-2">Open to Work!</em>
         </strong>
-        <h1 className="text-5xl font-bold mb-6 ">
+        <h1 className="text-5xl font-bold mb-6 max-sm:text-3xl">
           Hey there! I'm Venu Beenaveni &amp; I am a Full Stack Developer
         </h1>
-        <h4 className="mb-4 text-3xl ">
+        <h4 className="mb-4 text-3xl max-sm:text-2xl">
           I'm passionate about building responsive and modern web experiences.
           With over 8 years of hands-on experience, I specialize in crafting
           elegant UI/UX designs using modern frameworks like{" "}

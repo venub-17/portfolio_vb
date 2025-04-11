@@ -52,12 +52,12 @@ const Home = () => {
             <h4 className="text-3xl font-medium max-sm:text-2xl mb-6">
               I build things for the web.
             </h4>
-            <p className="text-lg mb-1">
+            <p className="text-xl mb-1">
               A frontend-focused web developer crafting sleek, high-performance
               websites and applications. I turn ideas into interactive,
               scalable, and future-ready digital experiences.
             </p>
-            <small className="text-sm">
+            <small className="text-lg">
               Let's build the future of the web, one pixel at a time. 🚀
             </small>
           </div>
