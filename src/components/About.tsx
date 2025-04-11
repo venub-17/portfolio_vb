@@ -12,11 +12,12 @@ const About = () => {
           I'm passionate about building responsive and modern web experiences.
           With over 8 years of hands-on experience, I specialize in crafting
           elegant UI/UX designs using modern frameworks like{" "}
-          <span className="font-medium text-white">React</span> and{" "}
-          <span className="font-medium text-white">Angular</span>, along with
-          the versatility of{" "}
-          <span className="font-medium text-white">Tailwind CSS</span> for
-          pixel-perfect styling.
+          <span className="font-medium text-white">Angular</span>,{" "}
+          <span className="font-medium text-white">React</span> and developing
+          robust back-end services with{" "}
+          <span className="font-medium text-white">Node js</span>. My full-stack
+          expertise enables me to build seamless, scalable applications,
+          ensuring both aesthetic appeal and high performance.
         </h4>
         <p className="mb-4 text-2xl">
           My journey began with a fascination for how technology can transform
