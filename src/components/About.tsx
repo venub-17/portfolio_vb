@@ -2,6 +2,9 @@ const About = () => {
   return (
     <>
       <section className="mx-auto px-4 py-10 text-gray-200">
+        <strong>
+          <em className="text-xl font-medium block mb-2">Open to Work!</em>
+        </strong>
         <h2 className="text-5xl font-bold mb-6 text-white">
           Hey there! I'm Venu Beenaveni &amp; I am a Front-End Developer
         </h2>

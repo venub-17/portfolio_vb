@@ -142,7 +142,7 @@ export const roles = [
   {
     company: "Techdeets Info Solutions Pvt Ltd",
 
-    client: "HIGHIQ Robotics India Pvt Ltd",
+    client: "HIGHIQ Robotics ",
     role: "UI Developer",
     duration: "April 2019 to Oct 2020",
     description:

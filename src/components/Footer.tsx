@@ -2,8 +2,8 @@ import { FaGithub, FaLinkedin } from "react-icons/fa";
 const Footer = () => {
   return (
     <>
-      <section className="p-1 border-t">
-        <footer className="relative bg-[#2e394a] text-gray-300  pt-10 pb-6">
+      <section className="p-1 border-t border-gray-600 ">
+        <footer className="relative bg-[#1c2330] text-gray-300  pt-8 pb-5">
           {/* Footer Content */}
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-10">

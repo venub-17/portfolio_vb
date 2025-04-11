@@ -1,4 +1,4 @@
-
+/* Modal backdrop with transition */
 .modal-backdrop {
   position: fixed;
   top: 0;
@@ -10,9 +10,14 @@
   align-items: center;
   justify-content: center;
   z-index: 10000;
-  /* display: none; */
+  transition: opacity 0.3s ease, visibility 0.3s ease; /* Fade-in effect */
 }
 
+.modal-backdrop.active {
+  visibility: visible;
+}
+
+/* Modal content with transition */
 .modal-content {
   background-color: #3b4759;
   padding: 20px;
@@ -21,10 +26,23 @@
   max-width: 500px;
   min-height: 250px;
   position: relative;
+  transform: scale(0.8); /* Start with smaller scale */
+  transition: opacity 0.3s ease, transform 0.3s ease; /* Fade-in and scale-up effect */
 }
+
+.modal-content.active {
+  transform: scale(1); /* Scale to normal size */
+}
+
+/* Close button styling and position */
 .cls-btn{
-    position: absolute;
-    top: 50%;
-    right: 50%;
-    transform: translate(50%,220%);
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  transform: translate(50%,220%);
+}
+
+/* Optional: Close button hover effect */
+.cls-btn button:hover {
+  background-color: #5a99c6;
 }

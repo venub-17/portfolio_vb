@@ -17,11 +17,13 @@ const Skills = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {isLoading && <p>Loading the skills</p>}
           {!isLoading &&
-            skills.map((item) => {
+            skills.map((item, i) => {
               return (
-                <>
-                  <SkillCard link={item.skill_link} name={item.skill_name} />
-                </>
+                <SkillCard
+                  key={i}
+                  link={item.skill_link}
+                  name={item.skill_name}
+                />
               );
             })}
         </div>

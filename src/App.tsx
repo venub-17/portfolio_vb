@@ -9,7 +9,7 @@ import UploadResume from "./components/admin/UploadResume";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import RootLayout from "./components/RootLayout";
 import Home from "./components/Home";
-import Projects from "./components/Projects";
+import Projects from "../src/components/projects/Projects";
 import Contact from "./components/Contact";
 import AboutPage from "./pages/AboutPage";
 
