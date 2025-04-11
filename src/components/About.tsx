@@ -1,14 +1,14 @@
 const About = () => {
   return (
     <>
-      <section className="mx-auto px-4 py-10 text-gray-200">
+      <section className="mx-auto px-4 py-10 ">
         <strong>
           <em className="text-xl font-medium block mb-2">Open to Work!</em>
         </strong>
-        <h2 className="text-5xl font-bold mb-6 text-white">
-          Hey there! I'm Venu Beenaveni &amp; I am a Front-End Developer
-        </h2>
-        <p className="mb-4 text-3xl text-[#bdc8e7]">
+        <h1 className="text-5xl font-bold mb-6 ">
+          Hey there! I'm Venu Beenaveni &amp; I am a Full Stack Developer
+        </h1>
+        <h4 className="mb-4 text-3xl ">
           I'm passionate about building responsive and modern web experiences.
           With over 8 years of hands-on experience, I specialize in crafting
           elegant UI/UX designs using modern frameworks like{" "}
@@ -17,7 +17,7 @@ const About = () => {
           the versatility of{" "}
           <span className="font-medium text-white">Tailwind CSS</span> for
           pixel-perfect styling.
-        </p>
+        </h4>
         <p className="mb-4 text-2xl">
           My journey began with a fascination for how technology can transform
           everyday interactions, driving me to master the art of merging clean,

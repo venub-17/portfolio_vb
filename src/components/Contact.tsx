@@ -1,3 +1,4 @@
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { useModal } from "../shared/modal/ModalContext";
 
 const Contact = () => {
@@ -29,16 +30,46 @@ const Contact = () => {
             <small className="text-xl ">
               Let's build the web for future. 🚀
             </small>
+            <div className="space-y-2 mt-10">
+              <h3 className="text-white font-semibold text-2xl">
+                Connect me at
+              </h3>
+              <div className="flex space-x-4 mt-2 text-4xl">
+                <a
+                  href="https://github.com/venub-17"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="hover:text-white"
+                >
+                  <FaGithub />
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/venu-beenaveni/"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="hover:text-white"
+                >
+                  <FaLinkedin />
+                </a>
+                {/* <a
+                              href="mailto:youremail@example.com"
+                              className="hover:text-white"
+                            >
+                              <FaEnvelope />
+                            </a> */}
+              </div>
+            </div>
           </div>
         </div>
-        <div className="contact_info shadow-[rgba(0,_0,_0,_0.25)_0px_25px_50px_-12px] rounded bg-[#4f596a] text-black p-20">
+
+        <div className="contact_info shadow-[rgba(0,_0,_0,_0.25)_0px_25px_50px_-12px] rounded bg-[#293343] text-black p-20">
           <form onSubmit={onSubmitContact}>
             <div className="flex flex-col gap-2 mb-4">
               <label htmlFor="">Name</label>
               <input
                 name="name"
                 required
-                className="border-2 border-gray-400 outline-none rounded py-4 px-4"
+                className="border bg-[#E1E4EA] border-gray-800 text-xl  outline-none rounded-lg py-4 px-4"
                 type="text"
               />
             </div>
@@ -47,7 +78,7 @@ const Contact = () => {
               <input
                 name="email"
                 required
-                className="border-2 border-gray-400 outline-none rounded py-4 px-4"
+                className="border bg-[#E1E4EA] border-gray-800 text-xl  outline-none rounded-lg  py-4 px-4"
                 type="text"
               />
             </div>
@@ -57,7 +88,7 @@ const Contact = () => {
                 name="description"
                 rows={12}
                 required
-                className="border-2 border-gray-400 outline-none rounded py-4 px-4"
+                className="border bg-[#E1E4EA] border-gray-800 outline-none rounded-lg text-xl  py-4 px-4"
               ></textarea>
             </div>
             <div className="flex justify-center">

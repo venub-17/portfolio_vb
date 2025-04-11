@@ -35,7 +35,7 @@ const Signup = () => {
                   <input
                     name="firstName"
                     type="text"
-                    className="border-2 border-gray-400 outline-none rounded py-4 px-4"
+                    className="border bg-[#E1E4EA] border-gray-800 text-xl  outline-none rounded-lg py-4 px-4"
                   />
                 </div>
                 <div className="flex  gap-2 flex-col">
@@ -43,7 +43,7 @@ const Signup = () => {
                   <input
                     name="lastName"
                     type="text"
-                    className="border-2 border-gray-400 outline-none rounded py-4 px-4"
+                    className="border bg-[#E1E4EA] border-gray-800 text-xl  outline-none rounded-lg py-4 px-4"
                   />
                 </div>
               </div>
@@ -52,7 +52,7 @@ const Signup = () => {
                 <input
                   name="email"
                   type="text"
-                  className="border-2 border-gray-400 outline-none rounded py-4 px-4"
+                  className="border bg-[#E1E4EA] border-gray-800 text-xl  outline-none rounded-lg py-4 px-4"
                 />
               </div>
               <div className="flex flex-col gap-2 mb-2">
@@ -60,7 +60,7 @@ const Signup = () => {
                 <input
                   name="password"
                   type="text"
-                  className="border-2 border-gray-400 outline-none rounded py-4 px-4"
+                  className="border bg-[#E1E4EA] border-gray-800 text-xl  outline-none rounded-lg py-4 px-4"
                 />
               </div>
               <div className="flex flex-col gap-2 mb-2">
@@ -68,13 +68,13 @@ const Signup = () => {
                 <input
                   name="confirmPassword"
                   type="text"
-                  className="border-2 border-gray-400 outline-none rounded py-4 px-4"
+                  className="border bg-[#E1E4EA] border-gray-800 text-xl  outline-none rounded-lg py-4 px-4"
                 />
               </div>
               <div className="flex justify-center ">
                 <button
                   type="submit"
-                  className="rounded px-8 py-4 text-[#000000] bg-[#75BBF5]"
+                  className="rounded px-8 text-xl py-4 tracking-wider text-[#ffffff] bg-[#3a5a83]"
                 >
                   Signup
                 </button>

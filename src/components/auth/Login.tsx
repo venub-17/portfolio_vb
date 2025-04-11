@@ -50,7 +50,7 @@ const Login = ({ onLoginSuccess }: LoginProps) => {
                 <input
                   name="email"
                   type="text"
-                  className="border-2 border-gray-400 outline-none rounded py-4 px-4"
+                  className="border bg-[#E1E4EA] text-xl border-gray-800   outline-none rounded-lg py-4 px-4"
                 />
               </div>
               <div className="flex flex-col gap-2 mb-2">
@@ -58,11 +58,11 @@ const Login = ({ onLoginSuccess }: LoginProps) => {
                 <input
                   name="password"
                   type="text"
-                  className="border-2 border-gray-400 outline-none rounded py-4 px-4"
+                  className="border bg-[#E1E4EA] text-xl border-gray-800 text-gray-200  outline-none rounded-lg py-4 px-4"
                 />
               </div>
               <div className="flex justify-center ">
-                <button className="rounded px-8 py-4 text-[#000000] bg-[#75BBF5]">
+                <button className="rounded px-8 text-xl py-4 tracking-wider text-[#ffffff] bg-[#3a5a83]">
                   Login
                 </button>
               </div>

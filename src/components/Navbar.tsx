@@ -55,7 +55,7 @@ const Navbar = ({ isLoginStatus, isAdminStatus, onLogout }: NavbarProps) => {
             height={40}
             width={40}
           />
-          <h1 className=" text-2xl font-bold">Venu Beenaveni</h1>
+          <h1 className="text-2xl font-bold">Venu Beenaveni</h1>
         </div>
         <div className="md:hidden">
           <button onClick={onMenuOpen}>
@@ -110,7 +110,7 @@ const Navbar = ({ isLoginStatus, isAdminStatus, onLogout }: NavbarProps) => {
           </ul>
           <button
             onClick={onDownloadresume}
-            className="px-4 py-2 bg-[#FFFFFF] text-[#374253] rounded-md"
+            className="px-4 py-2 bg-[#3a5a83] text-[#ffffff] tracking-wider rounded-md"
           >
             Resume
           </button>

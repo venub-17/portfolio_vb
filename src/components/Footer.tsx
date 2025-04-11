@@ -3,23 +3,21 @@ const Footer = () => {
   return (
     <>
       <section className="p-1 border-t border-gray-600 ">
-        <footer className="relative bg-[#1c2330] text-gray-300  pt-8 pb-5">
+        <footer className="relative bg-[#1c2330] text-[#bdc8e7]  pt-8 pb-5">
           {/* Footer Content */}
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-10">
               {/* Logo/Tagline */}
               <div>
-                <h2 className="text-2xl font-bold text-white">
-                  Venu Beenaveni
-                </h2>
-                <p className="text-sm mt-2 text-gray-400">
+                <h2 className="text-2xl font-bold ">Venu Beenaveni</h2>
+                <p className="text-sm mt-2 ">
                   Creating clean code and beautiful UI experiences.
                 </p>
               </div>
 
               {/* Social Icons */}
               <div className="space-y-2">
-                <h3 className="text-white font-semibold">Connect</h3>
+                <h3 className="font-semibold">Connect</h3>
                 <div className="flex space-x-4 mt-2 text-xl">
                   <a
                     href="https://github.com/venub-17"
