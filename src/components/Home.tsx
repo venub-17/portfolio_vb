@@ -38,6 +38,7 @@ const Home = () => {
 
     return () => clearInterval(interval);
   }, [letterIndex, wordIndex]);
+
   return (
     <>
       <div className="hero_sect">

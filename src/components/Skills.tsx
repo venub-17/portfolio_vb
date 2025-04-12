@@ -1,13 +1,10 @@
-import { useEffect } from "react";
 import "../App.css";
 import { useData } from "../shared/dataprovider/DataContext";
 import SkillCard from "./SkillCard";
 
 const Skills = () => {
-  const { isLoading, skills, fetchSkills } = useData();
-  useEffect(() => {
-    fetchSkills();
-  }, [isLoading, fetchSkills]);
+  const { isLoading, skills } = useData();
+
   return (
     <>
       <div className="overflow-hidden p-4">

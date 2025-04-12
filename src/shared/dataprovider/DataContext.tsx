@@ -1,4 +1,11 @@
-import React, { createContext, useState, useContext, ReactNode } from "react";
+import React, {
+  createContext,
+  useState,
+  useContext,
+  ReactNode,
+  useEffect,
+  useCallback,
+} from "react";
 import api from "../axiosInstance";
 import { useModal } from "../modal/ModalContext";
 
@@ -48,10 +55,9 @@ export const DataProvider: React.FC<DataProviderProps> = ({ children }) => {
   const [hasFetchedProjects, setHasFetchedProjects] = useState(false);
   const { openModal } = useModal();
 
-  // Fetch skills
-  const fetchSkills = async () => {
-    if (hasFetchedSkills) return;
-    if (skills.length > 0) return;
+  // Wrap the functions in useCallback to prevent unnecessary re-renders
+  const fetchSkills = useCallback(async () => {
+    if (hasFetchedSkills || skills.length > 0) return;
     setIsLoading(true);
     try {
       const response = await api.get<{ skills: Skill[] }>("/skills/get");
@@ -64,24 +70,28 @@ export const DataProvider: React.FC<DataProviderProps> = ({ children }) => {
     } finally {
       setIsLoading(false);
     }
-  };
+  }, [hasFetchedSkills, skills.length, openModal]);
 
-  // Fetch projects
-  const fetchProjects = async () => {
+  const fetchProjects = useCallback(async () => {
     if (hasFetchedProjects) return;
-
     setIsLoading(true);
     try {
       // const response = await api.get<{ projects: Project[] }>("/projects/get");
       // setProjects(response.data.projects);
-      setProjects([]);
+      setProjects([]); // Placeholder for now
       setHasFetchedProjects(true);
     } catch (err) {
       setError(err instanceof Error ? err.message : "Failed to fetch projects");
     } finally {
       setIsLoading(false);
     }
-  };
+  }, [hasFetchedProjects]);
+
+  // Now useEffect won't complain about missing dependencies
+  useEffect(() => {
+    fetchSkills();
+    fetchProjects();
+  }, [fetchSkills, fetchProjects]); // Add fetchSkills and fetchProjects as dependencies
 
   return (
     <DataContext.Provider
