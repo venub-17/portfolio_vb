@@ -31,7 +31,7 @@ const ProjectModal: React.FC<Prop> = ({ open, onClose, content }) => {
               ))}
             </ul>
             <small className="mt-4 block leading-tight">
-              Tools/Technologies: {content.tools}
+              Tools/Technologies: {content.tools.join(", ")}
             </small>
           </div>
 
