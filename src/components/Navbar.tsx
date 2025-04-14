@@ -145,7 +145,7 @@ const Navbar = ({ isLoginStatus, isAdminStatus, onLogout }: NavbarProps) => {
           )}
           <li className="px-4 py-2">
             <button
-              className="px-4 py-2  bg-[#3a5a83] hover:bg-[#345176] text-[#ffffff]rounded-md"
+              className="px-4 py-2  bg-[#3a5a83] hover:bg-[#345176] text-[#ffffff] rounded-md"
               onClick={onDownloadresume}
             >
               Resume

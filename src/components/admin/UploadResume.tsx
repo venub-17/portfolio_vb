@@ -1,5 +1,6 @@
 import { ChangeEvent, useState } from "react";
 import { useModal } from "../../shared/modal/ModalContext";
+import api from "../../shared/axiosInstance";
 
 const UploadResume = () => {
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
@@ -7,30 +8,47 @@ const UploadResume = () => {
 
   const onSelectFile = (event: ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
-
-    if (file && file.type === "application/pdf") {
+    if (
+      file &&
+      (file.type === "application/pdf" ||
+        file.type ===
+          "application/vnd.openxmlformats-officedocument.wordprocessingml.document")
+    ) {
       setSelectedFile(file);
     } else {
       openModal("Please Select PDF");
     }
   };
-  const onUpload = () => {
+  const onUpload = async () => {
+    if (!selectedFile) return null;
+    console.log("Selected File:", selectedFile);
     const formData = new FormData();
-    if (selectedFile) {
-      formData.append("file", selectedFile);
+    formData.append("file", selectedFile);
+    console.log(formData, "formData");
+    for (const [key, value] of formData.entries()) {
+      console.log(`${key}:`, value);
+    }
 
-      console.log(formData, "formData");
+    try {
+      const response = await api.post("/resume/upload", formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      });
+      openModal(response.data.message);
+    } catch (error) {
+      console.log(error);
     }
   };
   return (
     <>
       <section className="text-white flex justify-center mt-8 items-center flex-col">
         <p className="text-3xl pb-4">Upload Updated Resume here</p>
-        <button className=" bg-[#6c757d]  max-w-xs p-4 rounded text-xl">
+        <button className="px-8 py-4 text-xl bg-[#3a5a83] hover:bg-[#345176] text-[#ffffff] rounded-md">
           <input
             className="opacity-0 absolute"
             type="file"
-            accept=".pdf"
+            accept=".pdf,.doc,.docx"
             onChange={onSelectFile}
           />
           Select Resume
@@ -43,7 +61,7 @@ const UploadResume = () => {
         {selectedFile && (
           <button
             onClick={onUpload}
-            className="bg-[#228be6] mt-4 rounded py-4 px-8 text-2xl"
+            className=" bg-slate-400 hover:bg-slate-500 text-gray-900 mt-4 rounded py-4 px-8 text-2xl"
           >
             Upload
           </button>

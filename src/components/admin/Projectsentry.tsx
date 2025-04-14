@@ -30,7 +30,7 @@ const Projectsentry = () => {
 
   return (
     <>
-      <div className="bg-[#4f596a] rounded text-black px-20 py-10">
+      <div className="bg-[#293343] rounded text-black px-20 py-10">
         <form>
           <h1 className="text-2xl mb-4">Please add Project here...</h1>
 

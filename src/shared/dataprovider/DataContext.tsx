@@ -57,14 +57,13 @@ export const DataProvider: React.FC<DataProviderProps> = ({ children }) => {
 
   // Wrap the functions in useCallback to prevent unnecessary re-renders
   const fetchSkills = useCallback(async () => {
-    if (hasFetchedSkills || skills.length > 0) return;
+    // if (hasFetchedSkills || skills.length > 0) return;
     setIsLoading(true);
     try {
       const response = await api.get<{ skills: Skill[] }>("/skills/get");
       setSkills(response.data.skills);
       setHasFetchedSkills(true);
     } catch (err) {
-      console.log(err, "err");
       setError(err instanceof Error ? err.message : "Failed to fetch skills");
       openModal("Failed to fetch skills");
     } finally {
