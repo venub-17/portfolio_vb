@@ -31,7 +31,9 @@ const Contact = () => {
               Let's build the web for future. 🚀
             </small>
             <div className="space-y-2 mt-10">
-              <small className=" font-semibold text-2xl">Connect me at</small>
+              <small className=" font-semibold text-2xl">
+                Connect with me on{" "}
+              </small>
               <div className="flex space-x-4 mt-2 text-3xl">
                 <a
                   href="https://github.com/venub-17"
