@@ -8,7 +8,7 @@ interface LoginProps {
 }
 const Login = ({ onLoginSuccess }: LoginProps) => {
   const navigate = useNavigate();
-  const { openModal } = useModal();
+  const { openModal, closeModal } = useModal();
 
   const onLogin = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -17,6 +17,7 @@ const Login = ({ onLoginSuccess }: LoginProps) => {
     const formValue = Object.fromEntries(formData);
 
     try {
+      openModal("Hang tight boss 😎", "loading");
       const response = await api.post("/auth/login", formValue);
       if (response.status === 200) {
         const token = response.data.token;
@@ -26,6 +27,7 @@ const Login = ({ onLoginSuccess }: LoginProps) => {
         sessionStorage.setItem("isAdmin", isAdmin);
         sessionStorage.setItem("isLogin", isLogin);
         onLoginSuccess(isAdmin);
+        closeModal();
         navigate("/home");
       }
     } catch (error) {

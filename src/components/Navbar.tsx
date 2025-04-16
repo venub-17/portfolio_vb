@@ -13,7 +13,7 @@ interface NavbarProps {
 
 const Navbar = ({ isLoginStatus, isAdminStatus, onLogout }: NavbarProps) => {
   const [isMenuOpen, setMenuOpen] = useState(false);
-  const { openModal } = useModal();
+  const { openModal, closeModal } = useModal();
 
   const onMenuOpen = () => {
     setMenuOpen(!isMenuOpen);
@@ -21,23 +21,22 @@ const Navbar = ({ isLoginStatus, isAdminStatus, onLogout }: NavbarProps) => {
   const onDownloadresume = async () => {
     if (isLoginStatus) {
       try {
+        openModal("Hey bear with me yaar! m doing for you 😜", "loading");
         const response = await api.get("/resume/download", {
-          responseType: "blob", // Important for handling binary data
+          responseType: "blob",
         });
-        // Create a temporary URL for the blob
         const url = window.URL.createObjectURL(response.data);
-        // Create a link element and trigger the download
         const link = document.createElement("a");
         link.href = url;
-        link.setAttribute("download", "VenuBeenaveni.pdf"); // Set the filename
+        link.setAttribute("download", "VenuBeenaveni.pdf");
         document.body.appendChild(link);
         link.click();
-        // Clean up
         document.body.removeChild(link);
         window.URL.revokeObjectURL(url);
+        closeModal();
       } catch (error) {
         console.error("Error downloading file:", error);
-        alert("Failed to download file");
+        openModal("Failed to download file");
       }
     } else {
       openModal(`Hey dude, you’ve got to log in first! No free rides. 😉`);

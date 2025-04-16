@@ -18,6 +18,17 @@
 }
 
 /* Modal content with transition */
+.modal-content_load {
+  background-color: #3b4759;
+  padding: 20px;
+  border-radius: 8px;
+  width: 80%;
+  max-width: 500px;
+  min-height: 20px;
+  position: relative;
+  transform: scale(0.8); /* Start with smaller scale */
+  transition: opacity 0.3s ease, transform 0.3s ease; /* Fade-in and scale-up effect */
+}
 .modal-content {
   background-color: #3b4759;
   padding: 20px;
@@ -29,7 +40,6 @@
   transform: scale(0.8); /* Start with smaller scale */
   transition: opacity 0.3s ease, transform 0.3s ease; /* Fade-in and scale-up effect */
 }
-
 .modal-content.active {
   transform: scale(1); /* Scale to normal size */
 }
