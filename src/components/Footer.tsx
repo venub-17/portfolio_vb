@@ -20,7 +20,7 @@ const Footer = () => {
                 <h3 className="font-semibold">Connect</h3>
                 <div className="flex space-x-4 mt-2 text-xl">
                   <a
-                    href="https://github.com/venub-17"
+                    // href="https://github.com/venub-17"
                     target="_blank"
                     rel="noreferrer"
                     className="hover:text-white"

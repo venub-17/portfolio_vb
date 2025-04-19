@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import imgVenu from "../assets/3d_vb.jpg";
 import "../App.css";
 import api from "../shared/axiosInstance";
@@ -14,9 +14,13 @@ interface NavbarProps {
 const Navbar = ({ isLoginStatus, isAdminStatus, onLogout }: NavbarProps) => {
   const [isMenuOpen, setMenuOpen] = useState(false);
   const { openModal, closeModal } = useModal();
+  const navigate = useNavigate();
 
   const onMenuOpen = () => {
     setMenuOpen(!isMenuOpen);
+  };
+  const onNavHome = () => {
+    navigate("/home");
   };
   const onDownloadresume = async () => {
     if (isLoginStatus) {
@@ -46,7 +50,10 @@ const Navbar = ({ isLoginStatus, isAdminStatus, onLogout }: NavbarProps) => {
   return (
     <nav className="p-4 nav_container bg-[#1c2330] border-b border-gray-500">
       <div className="flex items-center justify-between">
-        <div className="flex justify-center items-center gap-2">
+        <div
+          className="flex justify-center items-center gap-2"
+          onClick={onNavHome}
+        >
           <img
             src={imgVenu}
             alt="Venu Beenaveni"
