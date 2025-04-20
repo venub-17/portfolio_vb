@@ -36,7 +36,7 @@ const Contact = () => {
               </small>
               <div className="flex space-x-4 mt-2 text-3xl">
                 <a
-                  href="https://github.com/venub-17"
+                  // href="https://github.com/venub-17"
                   target="_blank"
                   rel="noreferrer"
                   className="hover:text-white"

@@ -21,6 +21,7 @@ const Navbar = ({ isLoginStatus, isAdminStatus, onLogout }: NavbarProps) => {
   const onMenuOpen = () => {
     setMenuOpen(!isMenuOpen);
   };
+
   const onDownloadresume = async () => {
     if (isLoginStatus) {
       try {
