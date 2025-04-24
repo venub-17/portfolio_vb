@@ -35,7 +35,7 @@ const Modal: React.FC = () => {
           <>
             <div className="modal-content text-3xl">
               {content}
-              <div className="cls-btn">
+              <div className="modal_footer">
                 <button
                   onClick={closeModal}
                   className="rounded px-6 py-3 bg-slate-400 hover:bg-slate-500 text-gray-900"

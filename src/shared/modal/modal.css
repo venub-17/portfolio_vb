@@ -52,5 +52,27 @@
   transform: translate(50%,180%);
 }
 
-/* Optional: Close button hover effect */
+.modal_footer{
+  padding: 16px 20px;
+    position: absolute;
+    border-top: 1px solid #444c56;
 
+    bottom: 0;
+    right: 100%;
+    left: 50%;
+    transform: translate(-150%, 0%);
+}
+.modal_footers{
+  padding: 16px 20px;
+  border-top: 1px solid #444c56;
+  display: flex;
+  justify-content: space-evenly;
+}
+select option{
+  background-color: #3b4759;
+}
+
+
+option:hover{
+  background: red !important;
+}

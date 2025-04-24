@@ -8,18 +8,28 @@ const FormModal: React.FC<formProps> = ({ onClose }) => {
   return (
     <>
       <div className="modal-backdrop">
-        <div className="modal-content">
+        <div className="modal-content text-black">
           <form>
             <div className="flex flex-col gap-2 mb-4">
-              <label htmlFor="">Who you are</label>
-              <select name="" id="">
-                <option value="">Select</option>
-                <option value="">Recruiter</option>
-                <option value="">Select</option>
+              <label className="text-xl" htmlFor="">
+                Who you are
+              </label>
+              <select
+                name=""
+                id=""
+                className="border bg-[#E1E4EA] border-gray-800  text-xl  focus:ring-0 focus:outline-none  hover:bg-[#ccc] outline-none rounded-lg py-4 px-4"
+              >
+                <option value="" disabled selected>
+                  Select
+                </option>
+                <option value="recruiter">Recruiter</option>
+                <option value="select">User</option>
               </select>
             </div>
             <div className="flex flex-col gap-2 mb-4">
-              <label htmlFor="">Name</label>
+              <label className="text-xl" htmlFor="">
+                Name
+              </label>
               <input
                 name="name"
                 required
@@ -28,7 +38,9 @@ const FormModal: React.FC<formProps> = ({ onClose }) => {
               />
             </div>
             <div className="flex flex-col gap-2 mb-4">
-              <label htmlFor="">Name</label>
+              <label className="text-xl" htmlFor="">
+                Email
+              </label>
               <input
                 name="name"
                 required
@@ -36,9 +48,21 @@ const FormModal: React.FC<formProps> = ({ onClose }) => {
                 type="text"
               />
             </div>
-            <div>
-              <button onClick={onClose}>close</button>
-              <button onClick={onDownLoad}>Download</button>
+            <div className="modal_footers">
+              <button
+                className="rounded text-xl  px-6 py-3 tracking-wider bg-slate-400 hover:bg-slate-500 text-gray-900"
+                onClick={onClose}
+                type="button"
+              >
+                close
+              </button>
+              <button
+                type="submit"
+                className="px-6 text-xl py-3 bg-[#3a5a83] text-[#ffffff] hover:bg-[#345176]  tracking-wider rounded-md"
+                onClick={onDownLoad}
+              >
+                Download
+              </button>
             </div>
           </form>
         </div>
