@@ -12,7 +12,7 @@ interface NavbarProps {
   onLogout: () => void;
 }
 
-const Navbar = ({ isLoginStatus, isAdminStatus, onLogout }: NavbarProps) => {
+const Navbar = ({ isLoginStatus, isAdminStatus }: NavbarProps) => {
   const [isMenuOpen, setMenuOpen] = useState(false);
   const { openModal, closeModal } = useModal();
   const navigate = useNavigate();
@@ -108,13 +108,13 @@ const Navbar = ({ isLoginStatus, isAdminStatus, onLogout }: NavbarProps) => {
                   <Link to={"/admin"}>Admin</Link>
                 </li>
               )}
-              {!isLoginStatus ? (
+              {/* {!isLoginStatus ? (
                 <li className="px-4 py-2 ">
                   <Link to={"/login"}>Login</Link>
                 </li>
               ) : (
                 <button onClick={onLogout}>Logout</button>
-              )}
+              )} */}
             </ul>
             <button
               onClick={onDownloadresume}
@@ -144,7 +144,7 @@ const Navbar = ({ isLoginStatus, isAdminStatus, onLogout }: NavbarProps) => {
                 <Link to={"/admin"}>Admin</Link>
               </li>
             )}
-            {!isLoginStatus ? (
+            {/* {!isLoginStatus ? (
               <li className="px-4 py-2 ">
                 <Link to={"/login"}>Login</Link>
               </li>
@@ -152,7 +152,7 @@ const Navbar = ({ isLoginStatus, isAdminStatus, onLogout }: NavbarProps) => {
               <li className="px-4 py-2 ">
                 <button onClick={onLogout}>Logout</button>
               </li>
-            )}
+            )} */}
             <li className="px-4 py-2">
               <button
                 className="px-4 py-2  bg-[#3a5a83] hover:bg-[#345176] text-[#ffffff] rounded-md"

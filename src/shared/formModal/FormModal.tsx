@@ -11,8 +11,8 @@ const FormModal: React.FC<formProps> = ({ onClose }) => {
         <div className="modal-content text-black">
           <form>
             <div className="flex flex-col gap-2 mb-4">
-              <label className="text-xl" htmlFor="">
-                Who you are
+              <label className="text-3xl pb-4" htmlFor="">
+                Let’s Get to Know You!
               </label>
               <select
                 name=""
@@ -23,7 +23,7 @@ const FormModal: React.FC<formProps> = ({ onClose }) => {
                   Select
                 </option>
                 <option value="recruiter">Recruiter</option>
-                <option value="select">User</option>
+                <option value="select">Just Curious</option>
               </select>
             </div>
             <div className="flex flex-col gap-2 mb-4">
