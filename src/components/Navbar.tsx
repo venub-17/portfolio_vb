@@ -47,7 +47,7 @@ const Navbar = ({ isLoginStatus, isAdminStatus }: NavbarProps) => {
     }
   };
   const onNavHome = () => {
-    navigate("/home");
+    navigate("/");
   };
 
   return (
