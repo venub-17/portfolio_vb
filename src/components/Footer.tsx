@@ -1,4 +1,4 @@
-import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaFacebookSquare } from "react-icons/fa";
 const Footer = () => {
   return (
     <>
@@ -34,6 +34,14 @@ const Footer = () => {
                     className="hover:text-white"
                   >
                     <FaLinkedin />
+                  </a>
+                  <a
+                    href="https://www.linkedin.com/in/venu-beenaveni/"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="hover:text-white"
+                  >
+                    <FaFacebookSquare />
                   </a>
                   {/* <a
                     href="mailto:youremail@example.com"

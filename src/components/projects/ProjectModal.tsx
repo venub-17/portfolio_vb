@@ -11,11 +11,12 @@ const ProjectModal: React.FC<Prop> = ({ open, onClose, content }) => {
 
   return (
     <>
-      <div className="modal-backdrop">
+      <div className="modal-backdrop ">
         <div className="modal-container text-2xl">
           <div className="modal-header">
             <h2 className="text-3xl">
-              I was engaged at {content.client} through {content.company}.
+              I was engaged at {content.client} through{" "}
+              <b className="text-white"> {content.company}</b>.
             </h2>
           </div>
           <h2 className="px-8 ">Roles & Responsibilities</h2>

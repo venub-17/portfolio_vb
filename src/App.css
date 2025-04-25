@@ -19,6 +19,16 @@ small{
 em{
     color: #367375;
 }
+
+.tans_in img{
+
+    transition:transform 1s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+.tans_in:hover img{
+    transform: scale(1.2);
+
+}
+
 @media screen and (min-width: 320px) and (max-width: 640px) {
     .mbl_sidebar {
       height: 50px;
@@ -27,5 +37,11 @@ em{
     .flwr{
         flex-wrap: wrap;
     }
+  }
+  
+  .nav_active{
+    color: #fff;
+    padding-bottom: 0.5px;
+    border-bottom: 1px solid;
   }
   

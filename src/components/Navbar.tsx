@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import imgVenu from "../assets/3d_vb.jpg";
 import "../App.css";
 import api from "../shared/axiosInstance";
@@ -55,13 +55,13 @@ const Navbar = ({ isLoginStatus, isAdminStatus }: NavbarProps) => {
       <nav className="p-4 nav_container bg-[#1c2330] border-b border-gray-500">
         <div className="flex items-center justify-between">
           <div
-            className="flex justify-center items-center gap-2"
+            className="flex tans_in justify-center items-center gap-2"
             onClick={onNavHome}
           >
             <img
               src={imgVenu}
               alt="Venu Beenaveni"
-              className="border-2 rounded-full"
+              className=" border-2 rounded-full"
               height={40}
               width={40}
             />
@@ -88,32 +88,63 @@ const Navbar = ({ isLoginStatus, isAdminStatus }: NavbarProps) => {
           <div className="hidden  md:flex text-2xl items-center gap-x-6">
             <ul className="flex gap-x-6 ">
               <li className="px-4 py-2 ">
-                <Link to={"/"}>Home</Link>
+                <NavLink
+                  to={"/"}
+                  className={({ isActive }) => (isActive ? "nav_active" : "")}
+                >
+                  Home
+                </NavLink>
               </li>
               <li className="px-4 py-2 ">
-                <Link to={"/about"}>About</Link>
+                <NavLink
+                  to={"/about"}
+                  className={({ isActive }) => (isActive ? "nav_active" : "")}
+                >
+                  About
+                </NavLink>
               </li>
               {/* <li className="px-4 py-2 ">
-              <Link to={"/experience"}>Experience</Link>
+              <NavLink to={"/experience"}
+                  className={({ isActive }) => (isActive ? "nav_active" : "")}
+              >Experience</NavLink>
             </li> */}
               <li className="px-4 py-2 ">
-                <Link to={"/projects"}>Projects</Link>
+                <NavLink
+                  to={"/projects"}
+                  className={({ isActive }) => (isActive ? "nav_active" : "")}
+                >
+                  Projects
+                </NavLink>
               </li>
               <li className="px-4 py-2 ">
-                <Link to={"/contact"}>Contact</Link>
+                <NavLink
+                  to={"/contact"}
+                  className={({ isActive }) => (isActive ? "nav_active" : "")}
+                >
+                  Contact
+                </NavLink>
               </li>
 
               {isAdminStatus && (
                 <li className="px-4 py-2 ">
-                  <Link to={"/admin"}>Admin</Link>
+                  <NavLink
+                    to={"/admin"}
+                    className={({ isActive }) => (isActive ? "nav_active" : "")}
+                  >
+                    Admin
+                  </NavLink>
                 </li>
               )}
               {/* {!isLoginStatus ? (
                 <li className="px-4 py-2 ">
-                  <Link to={"/login"}>Login</Link>
+                  <NavLink to={"/login"}
+                  className={({ isActive }) => (isActive ? "nav_active" : "")}
+                  >Login</NavLink>
                 </li>
               ) : (
-                <button onClick={onLogout}>Logout</button>
+                <button onClick={onLogout}
+                  className={({ isActive }) => (isActive ? "nav_active" : "")}
+                >Logout</button>
               )} */}
             </ul>
             <button
@@ -127,30 +158,59 @@ const Navbar = ({ isLoginStatus, isAdminStatus }: NavbarProps) => {
         {isMenuOpen && (
           <ul className="flex-col md:hidden mt-4 gap-x-6">
             <li className="px-4 py-2 ">
-              <Link to={"/"}>Home</Link>
+              <NavLink
+                to={"/"}
+                className={({ isActive }) => (isActive ? "nav_active" : "")}
+              >
+                Home
+              </NavLink>
             </li>
             <li className="px-4 py-2 ">
-              <Link to={"/about"}>About</Link>
+              <NavLink
+                to={"/about"}
+                className={({ isActive }) => (isActive ? "nav_active" : "")}
+              >
+                About
+              </NavLink>
             </li>
             <li className="px-4 py-2 ">
-              <Link to={"/projects"}>Projects</Link>
+              <NavLink
+                to={"/projects"}
+                className={({ isActive }) => (isActive ? "nav_active" : "")}
+              >
+                Projects
+              </NavLink>
             </li>
             <li className="px-4 py-2 ">
-              <Link to={"/contact"}>Contact</Link>
+              <NavLink
+                to={"/contact"}
+                className={({ isActive }) => (isActive ? "nav_active" : "")}
+              >
+                Contact
+              </NavLink>
             </li>
 
             {isAdminStatus && (
               <li className="px-4 py-2 ">
-                <Link to={"/admin"}>Admin</Link>
+                <NavLink
+                  to={"/admin"}
+                  className={({ isActive }) => (isActive ? "nav_active" : "")}
+                >
+                  Admin
+                </NavLink>
               </li>
             )}
             {/* {!isLoginStatus ? (
               <li className="px-4 py-2 ">
-                <Link to={"/login"}>Login</Link>
+                <NavLink to={"/login"}
+                  className={({ isActive }) => (isActive ? "nav_active" : "")}
+                >Login</NavLink>
               </li>
             ) : (
               <li className="px-4 py-2 ">
-                <button onClick={onLogout}>Logout</button>
+                <button onClick={onLogout}
+                  className={({ isActive }) => (isActive ? "nav_active" : "")}
+                >Logout</button>
               </li>
             )} */}
             <li className="px-4 py-2">

@@ -23,7 +23,7 @@ const FormModal: React.FC<formProps> = ({ onClose }) => {
                   Select
                 </option>
                 <option value="recruiter">Recruiter</option>
-                <option value="select">Just Curious</option>
+                <option value="select">User</option>
               </select>
             </div>
             <div className="flex flex-col gap-2 mb-4">
