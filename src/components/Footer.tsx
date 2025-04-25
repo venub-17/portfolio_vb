@@ -1,4 +1,9 @@
-import { FaGithub, FaLinkedin, FaFacebookSquare } from "react-icons/fa";
+import {
+  FaGithub,
+  FaLinkedin,
+  FaFacebookSquare,
+  FaEnvelope,
+} from "react-icons/fa";
 const Footer = () => {
   return (
     <>
@@ -17,8 +22,14 @@ const Footer = () => {
 
               {/* Social Icons */}
               <div className="space-y-2">
-                <h3 className="font-semibold">Connect</h3>
+                <h3 className="font-semibold text-center">Connect</h3>
                 <div className="flex space-x-4 mt-2 text-xl">
+                  <a
+                    href="mailto:beenaveni.venu@gmail.com"
+                    className="hover:text-white"
+                  >
+                    <FaEnvelope />
+                  </a>
                   <a
                     // href="https://github.com/venub-17"
                     target="_blank"
@@ -35,20 +46,15 @@ const Footer = () => {
                   >
                     <FaLinkedin />
                   </a>
+
                   <a
-                    href="https://www.linkedin.com/in/venu-beenaveni/"
+                    // href="https://www.linkedin.com/in/venu-beenaveni/"
                     target="_blank"
                     rel="noreferrer"
                     className="hover:text-white"
                   >
                     <FaFacebookSquare />
                   </a>
-                  {/* <a
-                    href="mailto:youremail@example.com"
-                    className="hover:text-white"
-                  >
-                    <FaEnvelope />
-                  </a> */}
                 </div>
               </div>
             </div>

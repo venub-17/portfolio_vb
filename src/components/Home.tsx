@@ -32,9 +32,9 @@ const Home = () => {
           setDisplayedText("");
           setLetterIndex(0);
           setWordIndex((prev) => (prev + 1) % positions.length);
-        }, 500); // Wait 1 second before switching to the next word
+        }, 500);
       }
-    }, 100); // Adjust speed for each letter
+    }, 100);
 
     return () => clearInterval(interval);
   }, [letterIndex, wordIndex]);

@@ -15,8 +15,8 @@ const ProjectModal: React.FC<Prop> = ({ open, onClose, content }) => {
         <div className="modal-container text-2xl">
           <div className="modal-header">
             <h2 className="text-3xl">
-              I was engaged at {content.client} through{" "}
-              <b className="text-white"> {content.company}</b>.
+              I was engaged at <em className="text-white"> {content.client}</em>{" "}
+              through <em className="text-white"> {content.company}</em>.
             </h2>
           </div>
           <h2 className="px-8 ">Roles & Responsibilities</h2>
