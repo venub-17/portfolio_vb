@@ -28,7 +28,7 @@ const Login = ({ onLoginSuccess }: LoginProps) => {
         sessionStorage.setItem("isLogin", isLogin);
         onLoginSuccess(isAdmin);
         closeModal();
-        navigate("/home");
+        navigate("/");
       }
     } catch (error) {
       if (error instanceof AxiosError) {

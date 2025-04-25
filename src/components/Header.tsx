@@ -21,7 +21,7 @@ const Header = () => {
     sessionStorage.removeItem("isLogin");
     setIsAdminStatus(false);
     setIsLoginStatus(false);
-    navigate("/home");
+    navigate("/");
   };
   return (
     <>

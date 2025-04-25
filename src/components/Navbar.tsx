@@ -12,7 +12,7 @@ interface NavbarProps {
   onLogout: () => void;
 }
 
-const Navbar = ({ isLoginStatus, isAdminStatus }: NavbarProps) => {
+const Navbar = ({ isLoginStatus, isAdminStatus, onLogout }: NavbarProps) => {
   const [isMenuOpen, setMenuOpen] = useState(false);
   const { openModal, closeModal } = useModal();
   const navigate = useNavigate();
@@ -135,17 +135,18 @@ const Navbar = ({ isLoginStatus, isAdminStatus }: NavbarProps) => {
                   </NavLink>
                 </li>
               )}
-              {/* {!isLoginStatus ? (
-                <li className="px-4 py-2 ">
-                  <NavLink to={"/login"}
-                  className={({ isActive }) => (isActive ? "nav_active" : "")}
-                  >Login</NavLink>
-                </li>
+              {!isLoginStatus ? (
+                ""
               ) : (
-                <button onClick={onLogout}
-                  className={({ isActive }) => (isActive ? "nav_active" : "")}
-                >Logout</button>
-              )} */}
+                // <li className="px-4 py-2 ">
+                //   <NavLink to={"/login"}
+                //   className={({ isActive }) => (isActive ? "nav_active" : "")}
+                //   >Login</NavLink>
+                // </li>
+                <li className="px-4 py-2 ">
+                  <button onClick={onLogout}>Logout</button>
+                </li>
+              )}
             </ul>
             <button
               onClick={onDownloadresume}
@@ -200,19 +201,18 @@ const Navbar = ({ isLoginStatus, isAdminStatus }: NavbarProps) => {
                 </NavLink>
               </li>
             )}
-            {/* {!isLoginStatus ? (
-              <li className="px-4 py-2 ">
-                <NavLink to={"/login"}
-                  className={({ isActive }) => (isActive ? "nav_active" : "")}
-                >Login</NavLink>
-              </li>
+            {!isLoginStatus ? (
+              ""
             ) : (
+              // <li className="px-4 py-2 ">
+              //   <NavLink to={"/login"}
+              //     className={({ isActive }) => (isActive ? "nav_active" : "")}
+              //   >Login</NavLink>
+              // </li>
               <li className="px-4 py-2 ">
-                <button onClick={onLogout}
-                  className={({ isActive }) => (isActive ? "nav_active" : "")}
-                >Logout</button>
+                <button onClick={onLogout}>Logout</button>
               </li>
-            )} */}
+            )}
             <li className="px-4 py-2">
               <button
                 className="px-4 py-2  bg-[#3a5a83] hover:bg-[#345176] text-[#ffffff] rounded-md"
