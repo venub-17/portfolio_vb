@@ -103,7 +103,6 @@ const FormModal: React.FC<formProps> = ({ onClose }) => {
         const response = await api.get("/resume/download", {
           responseType: "blob",
         });
-        console.log(response.data, "data");
         const contentType = response.headers["content-type"];
         let fileName = "";
         if (contentType === "application/pdf") {

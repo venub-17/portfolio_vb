@@ -21,13 +21,8 @@ const UploadResume = () => {
   };
   const onUpload = async () => {
     if (!selectedFile) return null;
-    console.log("Selected File:", selectedFile);
     const formData = new FormData();
     formData.append("file", selectedFile);
-    console.log(formData, "formData");
-    for (const [key, value] of formData.entries()) {
-      console.log(`${key}:`, value);
-    }
 
     try {
       const response = await api.post("/resume/upload", formData, {
@@ -36,6 +31,7 @@ const UploadResume = () => {
         },
       });
       openModal(response.data.message);
+      setSelectedFile(null);
     } catch (error) {
       console.log(error);
     }
