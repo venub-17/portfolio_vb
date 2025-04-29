@@ -20,7 +20,6 @@ export const ModalProvider: React.FC<{ children: React.ReactNode }> = ({
 
   const openModal = (content: string, type: ModalType = "default") => {
     setContent(content);
-    console.log(type, "type");
     setIsOpen(true);
     setType(type);
   };

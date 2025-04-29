@@ -2,8 +2,6 @@ import { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import imgVenu from "../assets/3d_vb.jpg";
 import "../App.css";
-import api from "../shared/axiosInstance";
-import { useModal } from "../shared/modal/ModalContext";
 import FormModal from "../shared/formModal/FormModal";
 
 interface NavbarProps {
@@ -14,7 +12,6 @@ interface NavbarProps {
 
 const Navbar = ({ isLoginStatus, isAdminStatus, onLogout }: NavbarProps) => {
   const [isMenuOpen, setMenuOpen] = useState(false);
-  const { openModal, closeModal } = useModal();
   const navigate = useNavigate();
   const [showModal, setShowModal] = useState(false);
 
@@ -23,28 +20,7 @@ const Navbar = ({ isLoginStatus, isAdminStatus, onLogout }: NavbarProps) => {
   };
 
   const onDownloadresume = async () => {
-    if (isLoginStatus) {
-      try {
-        openModal("Hey bear with me yaar! m doing for you 😜", "loading");
-        const response = await api.get("/resume/download", {
-          responseType: "blob",
-        });
-        const url = window.URL.createObjectURL(response.data);
-        const link = document.createElement("a");
-        link.href = url;
-        link.setAttribute("download", "VenuBeenaveni.pdf");
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-        window.URL.revokeObjectURL(url);
-        closeModal();
-      } catch (error) {
-        console.error("Error downloading file:", error);
-        openModal("Failed to download file");
-      }
-    } else {
-      setShowModal(true);
-    }
+    setShowModal(true);
   };
   const onNavHome = () => {
     navigate("/");
