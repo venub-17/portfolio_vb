@@ -105,11 +105,16 @@ const FormModal: React.FC<formProps> = ({ onClose }) => {
         });
         console.log(response.data, "data");
         const contentType = response.headers["content-type"];
-        console.log(contentType, "type");
+        let fileName = "";
+        if (contentType === "application/pdf") {
+          fileName = "pdf";
+        } else {
+          fileName = "docx";
+        }
         const url = window.URL.createObjectURL(response.data);
         const link = document.createElement("a");
         link.href = url;
-        link.setAttribute("download", "VenuBeenaveni.pdf");
+        link.setAttribute("download", `VenuBeenaveni.${fileName}`);
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
