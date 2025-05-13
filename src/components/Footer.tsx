@@ -11,7 +11,7 @@ const Footer = () => {
         <footer className="relative bg-[#1c2330] text-[#bdc8e7]  pt-8 pb-5">
           {/* Footer Content */}
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-10">
+            <div className="flex flex-col md:flex-row justify-between items-start lg:flex-row xl:flex-row ultra-xl:flex-row  md:items-center lg:items-center xl:items-center ultra-xl:items-center gap-10">
               {/* Logo/Tagline */}
               <div>
                 <h2 className="text-2xl font-bold ">Venu Beenaveni</h2>

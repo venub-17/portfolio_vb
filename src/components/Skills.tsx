@@ -9,9 +9,11 @@ const Skills = () => {
     <>
       <div className="overflow-hidden p-4">
         {!isLoading && (
-          <h1 className="text-3xl mb-4 pb-10">Tech That Powers My Work</h1>
+          <h1 className="text-3xl mb-4 pb-10 ultra-xl:text-4xl">
+            Tech That Powers My Work
+          </h1>
         )}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 ultra-xl:grid-cols-6 gap-6">
           {isLoading && <p>Loading the skills</p>}
           {!isLoading &&
             skills.map((item, i) => {

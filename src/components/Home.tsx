@@ -43,8 +43,8 @@ const Home = () => {
   return (
     <>
       <div className="hero_sect">
-        <section className="hero-section pb-0 my-4 ultra-sm:mt-16 bg-gray-600 px-32 py-50 ultra-sm:px-2 max-sm:px-20 max-sm:py-32 sm:px-20 sm:py-32">
-          <div className="hero_container mx-8 my-0 items-center flex ultra-sm:flex-col lg:flex-row md:flex-row xl:mx-56 max-sm:flex-col sm:flex-col">
+        <section className="hero-section pb-0 my-4 bg-gray-600 px-32 py-50 ultra-sm:px-2 sm:mt-0 ultra-sm:py-12 max-sm:px-10 max-sm:py-14 sm:px-20 sm:py-32 md:mt-28 md:px-16 lg:mt-32 ultra-xl:mt-44 ultra-max-xl:mt-80">
+          <div className="hero_container mx-8 my-0 items-center flex ultra-sm:flex-col  max-sm:flex-col  sm:flex-row lg:flex-row md:flex-row xl:mx-56 sm:gap-8 md:gap-11 lg:gap-20">
             <div className="hero_text_container">
               <strong>
                 <em className="text-xl xl:text-2xl font-medium">Welcome!</em>
@@ -64,13 +64,13 @@ const Home = () => {
                 Let's build the future of the web, one pixel at a time. 🚀
               </small>
             </div>
-            <div className="step-img-box tans_in w-fit ultra-sm:mt-36  md:mt-32 sm:mt-48 max-sm:mt-44">
+            <div className="step-img-box tans_in w-fit ultra-sm:mt-36    max-sm:mt-44">
               <img src={img_vb} className="step-img ultra-sm:w-4/5" />
             </div>
           </div>
         </section>
 
-        <section className="skills_container px-20 py-20">
+        <section className="skills_container px-20 py-20 ultra-sm:mt-14">
           <h1 className="text-2xl xs:text-3xl sm-425:text-5xl transition-opacity duration-500 ease-in-out  opacity-100 delay-75">
             I'm a{" "}
             <strong className="px-2 py-1 rounded  text-[#fff]">

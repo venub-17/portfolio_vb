@@ -37,13 +37,13 @@ const Navbar = ({ isLoginStatus, isAdminStatus, onLogout }: NavbarProps) => {
             <img
               src={imgVenu}
               alt="Venu Beenaveni"
-              className="border-2 rounded-full"
+              className=" border-2 rounded-full"
               height={40}
               width={40}
             />
             <h1 className="text-2xl font-bold">Venu Beenaveni</h1>
           </div>
-          <div className="md:hidden">
+          <div className="sm:hidden md:hidden lg:hidden xl:hidden ultra-xl:hidden">
             <button onClick={onMenuOpen}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -61,7 +61,7 @@ const Navbar = ({ isLoginStatus, isAdminStatus, onLogout }: NavbarProps) => {
               </svg>
             </button>
           </div>
-          <div className="hidden  md:flex text-2xl items-center gap-x-6">
+          <div className="hidden  sm:flex md:flex lg:flex xl:flex ultra-xl:flex text-2xl items-center gap-x-6">
             <ul className="flex gap-x-6 ">
               <li className="px-4 py-2 ">
                 <NavLink
@@ -133,7 +133,7 @@ const Navbar = ({ isLoginStatus, isAdminStatus, onLogout }: NavbarProps) => {
           </div>
         </div>
         {isMenuOpen && (
-          <ul className="flex-col md:hidden mt-4 gap-x-6">
+          <ul className="flex-col sm:hidden md:hidden lg:hidden xl:hidden ultra-xl:hidden mt-4 gap-x-6">
             <li className="px-4 py-2 ">
               <NavLink
                 to={"/"}

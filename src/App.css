@@ -81,7 +81,31 @@ em{
     .flwr{
         flex-wrap: wrap;
     }
-    .step-img{
+   
+  }
+
+  
+@media screen and (min-width: 320px) and (max-width: 424px) {
+.step-img{
+    width: 60%;
+   
+}
+.step-img-box::before {
+  width: 95%;
+  padding-bottom: 95%;
+
+}
+
+.step-img-box::after {
+  width: 80%;
+  padding-bottom: 80%;
+
+}
+  }
+
+  
+@media screen and (min-width: 425px) and (max-width: 639px) {
+.step-img{
     width: 75%;
    
 }
@@ -97,3 +121,80 @@ em{
 
 }
   }
+  
+  
+@media screen and (min-width: 640px) and (max-width: 1024px) {
+.step-img{
+    width: 75%;
+   
+}
+.step-img-box::before {
+  width: 105%;
+  padding-bottom: 105%;
+
+}
+
+.step-img-box::after {
+  width: 90%;
+  padding-bottom: 90%;
+
+}
+  }
+  
+/*   
+
+@media screen and (min-width: 320px) and (max-width: 640px) {
+.step-img{
+    width: 75%;
+   
+}
+.step-img-box::before {
+  width: 105%;
+  padding-bottom: 105%;
+
+}
+
+.step-img-box::after {
+  width: 90%;
+  padding-bottom: 90%;
+
+}
+  }
+  
+  
+@media screen and (min-width: 320px) and (max-width: 640px) {
+.step-img{
+    width: 75%;
+   
+}
+.step-img-box::before {
+  width: 105%;
+  padding-bottom: 105%;
+
+}
+
+.step-img-box::after {
+  width: 90%;
+  padding-bottom: 90%;
+
+}
+  }
+  
+  
+@media screen and (min-width: 320px) and (max-width: 640px) {
+.step-img{
+    width: 75%;
+   
+}
+.step-img-box::before {
+  width: 105%;
+  padding-bottom: 105%;
+
+}
+
+.step-img-box::after {
+  width: 90%;
+  padding-bottom: 90%;
+
+}
+  } */

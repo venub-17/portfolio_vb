@@ -4,21 +4,13 @@ export default {
   theme: {
     extend: {
       screens: {
-        "ultra-sm": { min: "350px", max: "400px" },
-        "max-sm": "400px",
-        // => @media (min-width: 420px) { ... }
-
-        sm: "640px",
-        // => @media (min-width: 640px) { ... }
-
-        md: "768px",
-        // => @media (min-width: 768px) { ... }
-
-        lg: "1024px",
-        // => @media (min-width: 1024px) { ... }
-
-        xl: "1280px",
-        // => @media (min-width: 1280px) { ... }
+        "ultra-sm": { min: "320px", max: "376px" },
+        "max-sm": { min: "376px", max: "426px" },
+        sm: { min: "426px", max: "769px" },
+        md: { min: "769px", max: "1025px" },
+        lg: { min: "1025px", max: "1441px" },
+        xl: { min: "1441px", max: "2561px" },
+        "ultra-xl": { min: "2561px" },
       },
     },
   },

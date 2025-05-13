@@ -16,13 +16,13 @@ const Contact = () => {
   };
   return (
     <>
-      <section className="grid grid-cols-2 gap-20 px-20 py-20 ultra-sm:grid-cols-1 ">
+      <section className="grid grid-cols-2 gap-20 px-20 py-20 ultra-sm:grid-cols-1 max-sm:grid-cols-1">
         <div className="contact_info flex justify-center items-center">
           <div>
             <strong className="mb-2">
               <p className="text-2xl font-medium">Let's connect!</p>
             </strong>
-            <h1 className="leading-tight mb-3 break-words text-5xl font-bold max-sm:text-3xl">
+            <h1 className="leading-tight mb-3 break-words text-5xl font-bold ultra-sm:text-3xl max-sm:text-3xl">
               Reach out and let discuss how my front-end skills can bring your
               projects to life."
             </h1>
@@ -31,7 +31,7 @@ const Contact = () => {
               Let's build the web for future. 🚀
             </small>
             <div className="space-y-2 mt-10">
-              <small className=" font-semibold text-2xl">
+              <small className="font-semibold text-2xl ultra-sm:text-xl">
                 Connect with me on{" "}
               </small>
               <div className="flex space-x-4 mt-2 text-3xl">

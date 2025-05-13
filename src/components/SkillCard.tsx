@@ -12,7 +12,7 @@ const SkillCard: React.FC<Skill> = ({ link, name }) => {
         <div className="bg-[#293343]  p-2 rounded-md">
           <img src={link} width={30} height={30} alt={name} />
         </div>
-        <p className="text-2xl">{name}</p>
+        <p className="text-2xl ultra-xl:text-4xl">{name}</p>
       </div>
     </>
   );
