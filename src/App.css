@@ -82,18 +82,18 @@ em{
         flex-wrap: wrap;
     }
     .step-img{
-    width: 90%;
+    width: 80%;
    
 }
 .step-img-box::before {
-  width: 130%;
-  padding-bottom: 130%;
+  width: 110%;
+  padding-bottom: 110%;
 
 }
 
 .step-img-box::after {
-  width: 110%;
-  padding-bottom: 110%;
+  width: 95%;
+  padding-bottom: 95%;
 
 }
   }

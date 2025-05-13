@@ -43,8 +43,8 @@ const Home = () => {
   return (
     <>
       <div className="hero_sect">
-        <section className="hero-section pb-0 my-4 bg-gray-600 px-32 py-50 max-sm:px-20 max-sm:py-32 sm:px-20 sm:py-32">
-          <div className="hero_container mx-8 my-0 items-center flex lg:flex-row md:flex-row xl:mx-56 max-sm:flex-col sm:flex-col">
+        <section className="hero-section pb-0 my-4 ultra-sm:mt-16 bg-gray-600 px-32 py-50 ultra-sm:px-2 max-sm:px-20 max-sm:py-32 sm:px-20 sm:py-32">
+          <div className="hero_container mx-8 my-0 items-center flex ultra-sm:flex-col lg:flex-row md:flex-row xl:mx-56 max-sm:flex-col sm:flex-col">
             <div className="hero_text_container">
               <strong>
                 <em className="text-xl xl:text-2xl font-medium">Welcome!</em>
@@ -64,8 +64,8 @@ const Home = () => {
                 Let's build the future of the web, one pixel at a time. 🚀
               </small>
             </div>
-            <div className="step-img-box tans_in w-fit md:mt-32 sm:mt-48 max-sm:mt-44">
-              <img src={img_vb} className="step-img" />
+            <div className="step-img-box tans_in w-fit ultra-sm:mt-36  md:mt-32 sm:mt-48 max-sm:mt-44">
+              <img src={img_vb} className="step-img ultra-sm:w-4/5" />
             </div>
           </div>
         </section>
