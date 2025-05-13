@@ -40,6 +40,7 @@ em{
     width: 30%;
     z-index: 3;
     border-radius: 50%;
+    border: 0.2px solid #fff;
 }
 .step-img-box {
   position: relative;
@@ -69,7 +70,7 @@ em{
 .step-img-box::after {
   width: 40%;
   padding-bottom: 40%;
-  background-color: #4c5560;
+  background-color: rgba(76,85,96,0.2);
   z-index: 2;
 }
 
