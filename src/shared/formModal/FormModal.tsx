@@ -163,7 +163,7 @@ const FormModal: React.FC<formProps> = ({ onClose }) => {
               )}
             </div>
             <div className="flex flex-col gap-2 mb-4">
-              <label className="text-xl desktop:text-2xl" htmlFor="name">
+              <label className="text-xl xl:text-2xl" htmlFor="name">
                 Name
               </label>
               <input
@@ -178,7 +178,7 @@ const FormModal: React.FC<formProps> = ({ onClose }) => {
               )}
             </div>
             <div className="flex flex-col gap-2 mb-4">
-              <label className="text-xl desktop:text-2xl" htmlFor="email">
+              <label className="text-xl xl:text-2xl" htmlFor="email">
                 Email
               </label>
               <input

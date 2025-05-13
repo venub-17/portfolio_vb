@@ -4,10 +4,20 @@ export default {
   theme: {
     extend: {
       screens: {
-        xs: "320px", // 320px breakpoint
-        "sm-425": "425px", // 400px
-        laptop: "1024px",
-        desktop: "1280px",
+        "max-sm": "400px",
+        // => @media (min-width: 420px) { ... }
+
+        sm: "640px",
+        // => @media (min-width: 640px) { ... }
+
+        md: "768px",
+        // => @media (min-width: 768px) { ... }
+
+        lg: "1024px",
+        // => @media (min-width: 1024px) { ... }
+
+        xl: "1280px",
+        // => @media (min-width: 1280px) { ... }
       },
     },
   },

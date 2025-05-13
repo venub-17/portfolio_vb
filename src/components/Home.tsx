@@ -42,28 +42,29 @@ const Home = () => {
   return (
     <>
       <div className="hero_sect">
-        <section className="hero-section  pb-0 bg-gray-600 px-32 py-32 max-sm:px-20 max-sm:py-20 sm:px-20 sm:py-20">
-          <div className="hero_container  max-w-7xl mx-5 my-0 items-center">
+        <section className="hero-section pb-0 my-4 bg-gray-600 px-32 py-50 max-sm:px-20 max-sm:py-32 sm:px-20 sm:py-32">
+          <div className="hero_container mx-8 my-0 items-center flex lg:flex-row md:flex-row xl:mx-56 max-sm:flex-col sm:flex-col">
             <div className="hero_text_container">
               <strong>
-                <em className="text-xl desktop:text-2xl font-medium">
-                  Welcome!
-                </em>
+                <em className="text-xl xl:text-2xl font-medium">Welcome!</em>
               </strong>
-              <h1 className="text-5xl desktop:text-7xl font-bold max-sm:text-3xl">
+              <h1 className="text-5xl xl:text-6xl font-bold max-sm:text-3xl">
                 I'm Venu Beenaveni
               </h1>
-              <h4 className="text-3xl desktop:text-5xl font-medium max-sm:text-2xl mb-6">
+              <h4 className="text-3xl xl:text-4xl font-medium max-sm:text-2xl mb-6">
                 I build things for the web.
               </h4>
-              <p className="text-xl desktop:text-3xl mb-1">
+              <p className="text-xl xl:text-2xl mb-1">
                 A frontend-focused web developer crafting sleek,
                 high-performance websites and applications. I turn ideas into
                 interactive, scalable, and future-ready digital experiences.
               </p>
-              <small className="text-lg desktop:text-2xl">
+              <small className="text-lg xl:text-xl">
                 Let's build the future of the web, one pixel at a time. 🚀
               </small>
+            </div>
+            <div className="step-img-box tans_in w-fit md:mt-32 sm:mt-48 max-sm:mt-44">
+              <img src="src\assets\3d_vb.jpg" className="step-img" />
             </div>
           </div>
         </section>

@@ -29,7 +29,7 @@ const Navbar = ({ isLoginStatus, isAdminStatus, onLogout }: NavbarProps) => {
   return (
     <>
       <nav className="p-4 nav_container bg-[#1c2330] border-b border-gray-500">
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between ">
           <div
             className="flex tans_in justify-center items-center gap-2"
             onClick={onNavHome}
@@ -37,7 +37,7 @@ const Navbar = ({ isLoginStatus, isAdminStatus, onLogout }: NavbarProps) => {
             <img
               src={imgVenu}
               alt="Venu Beenaveni"
-              className=" border-2 rounded-full"
+              className="border-2 rounded-full"
               height={40}
               width={40}
             />
