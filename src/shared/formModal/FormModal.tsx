@@ -98,38 +98,48 @@ const FormModal: React.FC<formProps> = ({ onClose }) => {
 
     // Validate form before downloading
     if (validateForm()) {
-      try {
-        openModal("Hey bear with me yaar! m doing for you 😜", "loading");
-        const response = await api.get("/resume/download", {
-          responseType: "blob",
-        });
-        const contentType = response.headers["content-type"];
-        let fileName = "";
-        if (contentType === "application/pdf") {
-          fileName = "pdf";
-        } else {
-          fileName = "docx";
-        }
-        const url = window.URL.createObjectURL(response.data);
-        const link = document.createElement("a");
-        link.href = url;
-        link.setAttribute("download", `VenuBeenaveni.${fileName}`);
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-        window.URL.revokeObjectURL(url);
-        closeModal();
-      } catch (error) {
-        console.error("Error downloading file:", error);
-        openModal("Failed to download file");
+      const response = await api.post("/email-sent/post", formData);
+      console.log(response);
+      await onResumeDownLoad();
+      setFormData({
+        name: "",
+        email: "",
+        role: "",
+      });
+    }
+  };
+  const onResumeDownLoad = async () => {
+    try {
+      openModal("Hey bear with me yaar! m doing for you 😜", "loading");
+      const response = await api.get("/resume/download", {
+        responseType: "blob",
+      });
+      const contentType = response.headers["content-type"];
+      let fileName = "";
+      if (contentType === "application/pdf") {
+        fileName = "pdf";
+      } else {
+        fileName = "docx";
       }
+      const url = window.URL.createObjectURL(response.data);
+      const link = document.createElement("a");
+      link.href = url;
+      link.setAttribute("download", `VenuBeenaveni.${fileName}`);
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      window.URL.revokeObjectURL(url);
+      closeModal();
+    } catch (error) {
+      console.error("Error downloading file:", error);
+      openModal("Failed to download file");
     }
   };
 
   return (
     <>
       <div className="modal-backdrop">
-        <div className="modal-content text-black">
+        <div className="modal-content form_modalContent text-black">
           <form onSubmit={onDownLoad}>
             <div className="flex flex-col gap-2 mb-4">
               <label className="text-3xl pb-4" htmlFor="role">
@@ -140,7 +150,7 @@ const FormModal: React.FC<formProps> = ({ onClose }) => {
                 id="role"
                 value={formData.role}
                 onChange={handleChange}
-                className="border bg-[#E1E4EA] border-gray-800 text-xl focus:ring-0 focus:outline-none hover:bg-[#ccc] outline-none rounded-lg py-4 px-4"
+                className="border bg-[#E1E4EA] border-gray-800 text-xl focus:ring-0 focus:outline-none hover:bg-[#ccc] outline-none rounded-lg py-6 px-4"
               >
                 <option value="" disabled>
                   Select Role
@@ -153,14 +163,14 @@ const FormModal: React.FC<formProps> = ({ onClose }) => {
               )}
             </div>
             <div className="flex flex-col gap-2 mb-4">
-              <label className="text-xl" htmlFor="name">
+              <label className="text-xl desktop:text-2xl" htmlFor="name">
                 Name
               </label>
               <input
                 name="name"
                 value={formData.name}
                 onChange={handleChange}
-                className="border bg-[#E1E4EA] border-gray-800 text-xl outline-none rounded-lg py-4 px-4"
+                className="border bg-[#E1E4EA] border-gray-800 text-xl outline-none rounded-lg py-6 px-4"
                 type="text"
               />
               {errors.name && (
@@ -168,14 +178,14 @@ const FormModal: React.FC<formProps> = ({ onClose }) => {
               )}
             </div>
             <div className="flex flex-col gap-2 mb-4">
-              <label className="text-xl" htmlFor="email">
+              <label className="text-xl desktop:text-2xl" htmlFor="email">
                 Email
               </label>
               <input
                 name="email"
                 value={formData.email}
                 onChange={handleChange}
-                className="border bg-[#E1E4EA] border-gray-800 text-xl outline-none rounded-lg py-4 px-4"
+                className="border bg-[#E1E4EA] border-gray-800 text-xl outline-none rounded-lg py-6 px-4"
                 type="email"
               />
               {errors.email && (

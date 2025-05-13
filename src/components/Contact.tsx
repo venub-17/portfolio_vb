@@ -62,7 +62,7 @@ const Contact = () => {
           </div>
         </div>
 
-        <div className="contact_info shadow-[rgba(0,_0,_0,_0.25)_0px_25px_50px_-12px] rounded-lg bg-[#293343] text-black p-20">
+        <div className="contact_info text-xl desktop:text-2xl shadow-[rgba(0,_0,_0,_0.25)_0px_25px_50px_-12px] rounded-lg bg-[#293343] text-black p-20">
           <form onSubmit={onSubmitContact}>
             <div className="flex flex-col gap-2 mb-4">
               <label htmlFor="">Name</label>

@@ -60,7 +60,7 @@ const Login = ({ onLoginSuccess }: LoginProps) => {
                 <input
                   name="password"
                   type="text"
-                  className="border bg-[#E1E4EA] text-xl border-gray-800 text-gray-200  outline-none rounded-lg py-4 px-4"
+                  className="border bg-[#E1E4EA] text-xl border-gray-800   outline-none rounded-lg py-4 px-4"
                 />
               </div>
               <div className="flex justify-center ">
