@@ -4,7 +4,7 @@ export default {
   theme: {
     extend: {
       screens: {
-        "ultra-sm": "350px",
+        "ultra-sm": { min: "350px", max: "400px" },
         "max-sm": "400px",
         // => @media (min-width: 420px) { ... }
 
