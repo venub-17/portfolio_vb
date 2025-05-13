@@ -1,6 +1,7 @@
 import "../App.css";
 
 import { useEffect, useState } from "react";
+import img_vb from "../assets/3d_vb.jpg";
 
 import { Link } from "react-router-dom";
 
@@ -64,7 +65,7 @@ const Home = () => {
               </small>
             </div>
             <div className="step-img-box tans_in w-fit md:mt-32 sm:mt-48 max-sm:mt-44">
-              <img src="src\assets\3d_vb.jpg" className="step-img" />
+              <img src={img_vb} className="step-img" />
             </div>
           </div>
         </section>
