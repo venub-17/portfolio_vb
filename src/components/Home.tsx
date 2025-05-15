@@ -43,8 +43,8 @@ const Home = () => {
   return (
     <>
       <div className="hero_sect">
-        <section className="hero-section pb-0 my-4 bg-gray-600 px-32 py-50 ultra-sm:px-2 sm:mt-0 ultra-sm:py-12 max-sm:px-10 max-sm:py-14 sm:px-20 sm:py-32 md:mt-28 md:px-16 lg:mt-32 ultra-xl:mt-44 ultra-max-xl:mt-80">
-          <div className="hero_container mx-8 my-0 items-center flex ultra-sm:flex-col  max-sm:flex-col  sm:flex-row lg:flex-row md:flex-row xl:mx-56 sm:gap-8 md:gap-11 lg:gap-20">
+        <section className="hero-section pb-0 my-4 bg-gray-600 px-32 py-50 ultra-sm:px-2 sm:mt-0 ultra-sm:py-12 max-sm:px-10 max-sm:py-14 sm:px-20 sm:py-32 md:mt-28 md:px-16 lg:mt-32 ultra-xl:mt-80">
+          <div className="hero_container mx-8 my-0 items-center hero_res">
             <div className="hero_text_container">
               <strong>
                 <em className="text-xl xl:text-2xl font-medium">Welcome!</em>

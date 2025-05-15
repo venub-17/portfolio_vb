@@ -1,11 +1,12 @@
 import { Link, Outlet } from "react-router-dom";
+import "../../shared/responsive_style.css";
 const AdminRoot = () => {
   return (
     <>
-      <div className="grid bg-gray-800  grid-rows-[auto_1fr] sm:grid-rows-1 sm:grid-cols-[1fr_4fr]">
+      <div className=" bg-gray-800 flex_admin">
         {/* Sidebar - On top in mobile, on side in large screens */}
         <aside className="bg-gray-800 mbl_sidebar  h-screen border-r text-white p-4  ">
-          <ul className="flex max-sm:flex-row sm:flex-col gap-10">
+          <ul className="felx_admin_aside gap-10">
             <li>
               <span className="text-red"></span>
               <Link to={"user"}>Recruiter Details</Link>

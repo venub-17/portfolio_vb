@@ -23,7 +23,7 @@ const Skillsentry = () => {
 
   return (
     <>
-      <div className="bg-[#293343] rounded text-black px-20 py-10">
+      <div className="bg-[#293343] w-3/4 m-auto rounded text-black px-20 py-10">
         <form onSubmit={onSkillSubmit}>
           <h1 className="text-2xl mb-4">Please add New Skill here...</h1>
           <div className="flex flwr flex-col gap-10 justify-evenly">

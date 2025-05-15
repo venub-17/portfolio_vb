@@ -98,7 +98,7 @@ const FormModal: React.FC<formProps> = ({ onClose }) => {
 
     // Validate form before downloading
     if (validateForm()) {
-      const response = await api.post("/email-sent/post", formData);
+      const response = await api.post("/resumeDownload/post", formData);
       console.log(response);
       await onResumeDownLoad();
       setFormData({
@@ -155,8 +155,8 @@ const FormModal: React.FC<formProps> = ({ onClose }) => {
                 <option value="" disabled>
                   Select Role
                 </option>
-                <option value="recruiter">Recruiter</option>
-                <option value="user">User</option>
+                <option value="Recruiter">Recruiter</option>
+                <option value="User">User</option>
               </select>
               {errors.role && (
                 <p className="text-red-500 text-2xl">{errors.role}</p>

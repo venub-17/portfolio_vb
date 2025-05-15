@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer components {
+  .flex_admin {
+    @apply grid sm:grid-rows-1 sm:grid-cols-[1fr_4fr] 
+           md:grid-rows-1 md:grid-cols-[1fr_4fr] 
+           lg:grid-rows-1 lg:grid-cols-[1fr_4fr] 
+           xl:grid-rows-1 xl:grid-cols-[1fr_4fr];
+  }
+  .felx_admin_aside{
+    @apply flex max-sm:flex-row ultra-sm:flex-row sm:flex-col md:flex-col lg:flex-col;
+  }
+  .hero_res{
+    @apply flex ultra-sm:flex-col  max-sm:flex-col  sm:flex-row lg:flex-row md:flex-row xl:mx-56 sm:gap-8 md:gap-11 lg:gap-20
+  }
+}
