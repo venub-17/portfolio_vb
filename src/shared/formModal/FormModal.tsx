@@ -96,16 +96,23 @@ const FormModal: React.FC<formProps> = ({ onClose }) => {
   const onDownLoad = async (e: React.FormEvent) => {
     e.preventDefault(); // Prevent default form submission
 
-    // Validate form before downloading
-    if (validateForm()) {
-      const response = await api.post("/resumeDownload/post", formData);
-      console.log(response);
-      await onResumeDownLoad();
-      setFormData({
-        name: "",
-        email: "",
-        role: "",
-      });
+    try {
+      if (validateForm()) {
+        const response = await api.post("/resumeDownload/post", formData);
+        if (response.status !== 400) {
+          await onResumeDownLoad();
+          setFormData({
+            name: "",
+            email: "",
+            role: "",
+          });
+        }
+      }
+    } catch (error) {
+      console.log(error);
+      openModal(
+        `Invalid or Undeliverable Email.\n\nPlease Enter Valid or Deliverable Email`
+      );
     }
   };
   const onResumeDownLoad = async () => {

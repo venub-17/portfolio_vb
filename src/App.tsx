@@ -1,5 +1,4 @@
 import Projectsentry from "./components/admin/Projectsentry";
-import User from "./components/admin/User";
 import PrivateRoute from "./components/PrivateRoute";
 import Skillsentry from "./components/admin/Skillsentry";
 import Login from "./components/auth/Login";
@@ -12,6 +11,7 @@ import Home from "./components/Home";
 import Projects from "../src/components/projects/Projects";
 import Contact from "./components/Contact";
 import AboutPage from "./pages/AboutPage";
+import Userpage from "./components/admin/Userpage";
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(
@@ -50,16 +50,13 @@ function App() {
           children: [
             {
               path: "",
-              element: <User />,
+              element: <Userpage />,
             },
             {
               path: "project-data",
               element: <Projectsentry />,
             },
-            {
-              path: "user",
-              element: <User />,
-            },
+
             {
               path: "skills",
               element: <Skillsentry />,

@@ -66,7 +66,11 @@ const Navbar = ({ isLoginStatus, isAdminStatus, onLogout }: NavbarProps) => {
               <li className="px-4 py-2 ">
                 <NavLink
                   to={"/"}
-                  className={({ isActive }) => (isActive ? "nav_active" : "")}
+                  className={({ isActive }) =>
+                    `nav_item ${
+                      isActive ? "nav_active" : ""
+                    } hover:text-white hover:border-b`
+                  }
                 >
                   Home
                 </NavLink>
@@ -74,20 +78,32 @@ const Navbar = ({ isLoginStatus, isAdminStatus, onLogout }: NavbarProps) => {
               <li className="px-4 py-2 ">
                 <NavLink
                   to={"/about"}
-                  className={({ isActive }) => (isActive ? "nav_active" : "")}
+                  className={({ isActive }) =>
+                    `nav_item ${
+                      isActive ? "nav_active" : ""
+                    } hover:text-white hover:border-b`
+                  }
                 >
                   About
                 </NavLink>
               </li>
               {/* <li className="px-4 py-2 ">
               <NavLink to={"/experience"}
-                  className={({ isActive }) => (isActive ? "nav_active" : "")}
+                className={({ isActive }) =>
+                    `nav_item ${
+                      isActive ? "nav_active" : ""
+                    } hover:text-white hover:border-b`
+                  }
               >Experience</NavLink>
             </li> */}
               <li className="px-4 py-2 ">
                 <NavLink
                   to={"/projects"}
-                  className={({ isActive }) => (isActive ? "nav_active" : "")}
+                  className={({ isActive }) =>
+                    `nav_item ${
+                      isActive ? "nav_active" : ""
+                    } hover:text-white hover:border-b`
+                  }
                 >
                   Projects
                 </NavLink>
@@ -95,7 +111,11 @@ const Navbar = ({ isLoginStatus, isAdminStatus, onLogout }: NavbarProps) => {
               <li className="px-4 py-2 ">
                 <NavLink
                   to={"/contact"}
-                  className={({ isActive }) => (isActive ? "nav_active" : "")}
+                  className={({ isActive }) =>
+                    `nav_item ${
+                      isActive ? "nav_active" : ""
+                    } hover:text-white hover:border-b`
+                  }
                 >
                   Contact
                 </NavLink>
@@ -105,7 +125,11 @@ const Navbar = ({ isLoginStatus, isAdminStatus, onLogout }: NavbarProps) => {
                 <li className="px-4 py-2 ">
                   <NavLink
                     to={"/admin"}
-                    className={({ isActive }) => (isActive ? "nav_active" : "")}
+                    className={({ isActive }) =>
+                      `nav_item ${
+                        isActive ? "nav_active" : ""
+                      } hover:text-white hover:border-b`
+                    }
                   >
                     Admin
                   </NavLink>
@@ -116,7 +140,11 @@ const Navbar = ({ isLoginStatus, isAdminStatus, onLogout }: NavbarProps) => {
               ) : (
                 // <li className="px-4 py-2 ">
                 //   <NavLink to={"/login"}
-                //   className={({ isActive }) => (isActive ? "nav_active" : "")}
+                //     className={({ isActive }) =>
+                //   `nav_item ${
+                //     isActive ? "nav_active" : ""
+                //   } hover:text-white hover:border-b`
+                // }
                 //   >Login</NavLink>
                 // </li>
                 <li className="px-4 py-2 ">
@@ -137,7 +165,11 @@ const Navbar = ({ isLoginStatus, isAdminStatus, onLogout }: NavbarProps) => {
             <li className="px-4 py-2 ">
               <NavLink
                 to={"/"}
-                className={({ isActive }) => (isActive ? "nav_active" : "")}
+                className={({ isActive }) =>
+                  `nav_item ${
+                    isActive ? "nav_active" : ""
+                  } hover:text-white hover:border-b`
+                }
               >
                 Home
               </NavLink>
@@ -145,7 +177,11 @@ const Navbar = ({ isLoginStatus, isAdminStatus, onLogout }: NavbarProps) => {
             <li className="px-4 py-2 ">
               <NavLink
                 to={"/about"}
-                className={({ isActive }) => (isActive ? "nav_active" : "")}
+                className={({ isActive }) =>
+                  `nav_item ${
+                    isActive ? "nav_active" : ""
+                  } hover:text-white hover:border-b`
+                }
               >
                 About
               </NavLink>
@@ -153,7 +189,11 @@ const Navbar = ({ isLoginStatus, isAdminStatus, onLogout }: NavbarProps) => {
             <li className="px-4 py-2 ">
               <NavLink
                 to={"/projects"}
-                className={({ isActive }) => (isActive ? "nav_active" : "")}
+                className={({ isActive }) =>
+                  `nav_item ${
+                    isActive ? "nav_active" : ""
+                  } hover:text-white hover:border-b`
+                }
               >
                 Projects
               </NavLink>
@@ -161,7 +201,11 @@ const Navbar = ({ isLoginStatus, isAdminStatus, onLogout }: NavbarProps) => {
             <li className="px-4 py-2 ">
               <NavLink
                 to={"/contact"}
-                className={({ isActive }) => (isActive ? "nav_active" : "")}
+                className={({ isActive }) =>
+                  `nav_item ${
+                    isActive ? "nav_active" : ""
+                  } hover:text-white hover:border-b`
+                }
               >
                 Contact
               </NavLink>
@@ -171,7 +215,11 @@ const Navbar = ({ isLoginStatus, isAdminStatus, onLogout }: NavbarProps) => {
               <li className="px-4 py-2 ">
                 <NavLink
                   to={"/admin"}
-                  className={({ isActive }) => (isActive ? "nav_active" : "")}
+                  className={({ isActive }) =>
+                    `nav_item ${
+                      isActive ? "nav_active" : ""
+                    } hover:text-white hover:border-b`
+                  }
                 >
                   Admin
                 </NavLink>
@@ -182,7 +230,12 @@ const Navbar = ({ isLoginStatus, isAdminStatus, onLogout }: NavbarProps) => {
             ) : (
               // <li className="px-4 py-2 ">
               //   <NavLink to={"/login"}
-              //     className={({ isActive }) => (isActive ? "nav_active" : "")}
+              //       className={({ isActive }) =>
+              //   `  className={({ isActive }) =>
+              //   `nav_item ${
+              //     isActive ? "nav_active" : ""
+              //   } hover:text-white hover:border-b`
+              // }
               //   >Login</NavLink>
               // </li>
               <li className="px-4 py-2 ">
