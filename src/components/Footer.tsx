@@ -22,7 +22,7 @@ const Footer = () => {
 
               {/* Social Icons */}
               <div className="space-y-2">
-                <h3 className="font-semibold text-center">Connect</h3>
+                <h3 className="font-semibold">Connect</h3>
                 <div className="flex space-x-4 mt-2 text-xl">
                   <a
                     href="mailto:beenaveni.venu@gmail.com"
