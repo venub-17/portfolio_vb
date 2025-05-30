@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "../modal/modal.css";
 import { useModal } from "../modal/ModalContext";
 import api from "../axiosInstance";
+import { useToast } from "../toast/ToastContext";
 
 interface formProps {
   onClose: () => void;
@@ -10,6 +11,7 @@ interface formProps {
 const FormModal: React.FC<formProps> = ({ onClose }) => {
   // State to hold form data and errors
   const { openModal, closeModal } = useModal();
+  const { openToast } = useToast();
 
   const [formData, setFormData] = useState({
     name: "",
@@ -101,6 +103,7 @@ const FormModal: React.FC<formProps> = ({ onClose }) => {
         const response = await api.post("/resumeDownload/post", formData);
         if (response.status !== 400) {
           await onResumeDownLoad();
+          openToast();
           setFormData({
             name: "",
             email: "",

@@ -48,6 +48,7 @@ const Home = () => {
   const onContact = () => {
     navigate("/contact");
   };
+
   return (
     <>
       <div className="hero_sect">

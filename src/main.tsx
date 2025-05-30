@@ -4,13 +4,16 @@ import "./index.css";
 import App from "./App.tsx";
 import { ModalProvider } from "./shared/modal/ModalContext.tsx";
 import { DataProvider } from "./shared/dataprovider/DataContext.tsx";
+import ToastProvider from "./shared/toast/ToastContext.tsx";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <ModalProvider>
-      <DataProvider>
-        <App />
-      </DataProvider>
-    </ModalProvider>
+    <ToastProvider>
+      <ModalProvider>
+        <DataProvider>
+          <App />
+        </DataProvider>
+      </ModalProvider>
+    </ToastProvider>
   </StrictMode>
 );

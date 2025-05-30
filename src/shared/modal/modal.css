@@ -9,7 +9,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 10000;
+  z-index: 100;
   transition: opacity 0.3s ease, visibility 0.3s ease; /* Fade-in effect */
 }
 
@@ -28,6 +28,7 @@
   position: relative;
   transform: scale(0.8); /* Start with smaller scale */
   transition: opacity 0.3s ease, transform 0.3s ease; /* Fade-in and scale-up effect */
+  z-index: 4;
 }
 .modal-content {
   background-color: #3b4759;

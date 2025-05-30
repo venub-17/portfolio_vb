@@ -2,9 +2,11 @@ import React, { useState } from "react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { useModal } from "../shared/modal/ModalContext";
 import api from "../shared/axiosInstance";
+import { useToast } from "../shared/toast/ToastContext";
 
 const Contact = () => {
   const { openModal, closeModal } = useModal();
+  const { openToast } = useToast();
 
   // State for form fields and errors
   const [formData, setFormData] = useState({
@@ -91,8 +93,7 @@ const Contact = () => {
         const response = await api.post("/contact/post", formData);
         console.log(response, "res");
         closeModal();
-
-        openModal(response.data.message);
+        openToast();
         setFormData({ name: "", email: "", description: "" });
         setErrors({ name: "", email: "", description: "" });
       } catch (error) {
