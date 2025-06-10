@@ -58,7 +58,7 @@ export const DataProvider: React.FC<DataProviderProps> = ({ children }) => {
   // Wrap the functions in useCallback to prevent unnecessary re-renders
   const fetchSkills = useCallback(
     async (forceRefresh = false) => {
-      if (!forceRefresh && (hasFetchedSkills || skills.length > 0)) return;
+      if (!forceRefresh && hasFetchedSkills) return;
       setIsLoading(true);
       try {
         const response = await api.get<{ skills: Skill[] }>("/skills/get");
@@ -69,6 +69,7 @@ export const DataProvider: React.FC<DataProviderProps> = ({ children }) => {
         openModal("Failed to fetch skills");
       } finally {
         setIsLoading(false);
+        setHasFetchedSkills(true);
       }
     },
     [hasFetchedSkills, openModal]

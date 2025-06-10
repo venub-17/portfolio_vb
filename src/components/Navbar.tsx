@@ -16,6 +16,7 @@ const Navbar = ({ isLoginStatus, isAdminStatus, onLogout }: NavbarProps) => {
   const [showModal, setShowModal] = useState(false);
 
   const onMenuOpen = () => {
+    console.log("clicled");
     setMenuOpen(!isMenuOpen);
   };
 
@@ -161,7 +162,7 @@ const Navbar = ({ isLoginStatus, isAdminStatus, onLogout }: NavbarProps) => {
           </div>
         </div>
         {isMenuOpen && (
-          <ul className="flex-col sm:hidden md:hidden lg:hidden xl:hidden ultra-xl:hidden mt-4 gap-x-6">
+          <ul className="flex-col  md:hidden lg:hidden xl:hidden ultra-xl:hidden mt-4 gap-x-6">
             <li className="px-4 py-2 ">
               <NavLink
                 to={"/"}
