@@ -16,7 +16,6 @@ const Navbar = ({ isLoginStatus, isAdminStatus, onLogout }: NavbarProps) => {
   const [showModal, setShowModal] = useState(false);
 
   const onMenuOpen = () => {
-    console.log("clicled");
     setMenuOpen(!isMenuOpen);
   };
 

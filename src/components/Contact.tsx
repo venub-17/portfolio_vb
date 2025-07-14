@@ -105,7 +105,7 @@ const Contact = () => {
 
   return (
     <>
-      <section className="grid grid-cols-2 gap-20 px-20 py-20 ultra-sm:grid-cols-1 max-sm:grid-cols-1">
+      <section className="grid grid-cols-2 gap-20 px-20 py-20 ultra-sm:grid-cols-1 max-sm:grid-cols-1 sm:grid-cols-1">
         <div className="contact_info flex justify-center items-center">
           <div>
             <strong className="mb-2">
