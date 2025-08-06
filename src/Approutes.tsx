@@ -1,5 +1,9 @@
 import { useState } from "react";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import {
+  createBrowserRouter,
+  Navigate,
+  RouterProvider,
+} from "react-router-dom";
 import RootLayout from "./components/RootLayout";
 import Signup from "./components/auth/Signup";
 import Login from "./components/auth/Login";
@@ -51,6 +55,10 @@ const Approutes = () => {
             {
               path: "",
               element: <Userpage />,
+            },
+            {
+              path: "user",
+              element: <Navigate to=".." replace />,
             },
             {
               path: "project-data",

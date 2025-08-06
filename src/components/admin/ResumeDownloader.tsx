@@ -21,7 +21,7 @@ const ResumeDownloader = () => {
     };
 
     fetchData();
-  }, [users]);
+  }, []);
   return (
     <>
       <section className="text-center text-white m-0 p-0">
