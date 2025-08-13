@@ -96,8 +96,7 @@ const FormModal: React.FC<formProps> = ({ onClose }) => {
   };
 
   const onDownLoad = async (e: React.FormEvent) => {
-    e.preventDefault(); // Prevent default form submission
-
+    e.preventDefault();
     try {
       if (validateForm()) {
         const response = await api.post("/resumeDownload/post", formData);
